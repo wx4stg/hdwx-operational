@@ -1,6 +1,6 @@
 #!/bin/sh
 MY_DIR=`pwd`
-cd $HOME/HDWX-operational/
+cd $HOME/hdwx-operational/
 productDirs=(*/)
 for productDir in "${productDirs[@]}"
 do
