@@ -4,7 +4,9 @@ cd $HOME/hdwx-operational/
 productDirs=(*/)
 for productDir in "${productDirs[@]}"
 do
-    bash $productDir/generate.sh
+    cd $productDir
+    bash generate.sh
+    cd $MY_DIR
     rsync -r $productDir/output/. /var/www/html/wx4stg/
 done
-cd $MY_DIR
+
