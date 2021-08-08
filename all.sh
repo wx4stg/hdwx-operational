@@ -1,16 +1,17 @@
 #!/bin/sh
-MY_DIR=`pwd`
-cd $HOME/hdwx-operational/
+startingDir=`pwd`
+myDir=`dirname $BASH_SOURCE`
+cd $myDir
 productDirs=(*/)
 for productDir in "${productDirs[@]}"
 do
     cd $productDir
     bash generate.sh
-    cd $HOME/hdwx-operational/
+    cd $myDir
     rsync -r $productDir/output/. /var/www/html/wx4stg/
 done
-mkdir -p $HOME/hdwx-operational/metadata/
+mkdir -p $myDir/metadata/
 ~/miniconda3/envs/HDWX/bin/python3 writeProductTypeData.py
-rsync -r $HOME/hdwx-operational/metadata/. /var/www/html/wx4stg/metadata
-rm -rf $HOME/hdwx-operational/metadata/
-cd $MY_DIR
+rsync -r $myDir/metadata/. /var/www/html/wx4stg/metadata
+rm -rf $myDir/metadata/
+cd $startingDir
