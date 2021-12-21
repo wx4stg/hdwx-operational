@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 startingDir=`pwd`
-myDir=`dirname $BASH_SOURCE`
+relMyDir=`dirname $BASH_SOURCE`
+myDir=`realpath $relMyDir`
 cd $myDir
 productDirs=(*/)
 for productDir in "${productDirs[@]}"
