@@ -9,7 +9,7 @@ do
     cd $productDir
     bash generate.sh
     cd $myDir
-    outDir=`realpath $startingDir/$productDir/output/`/.
-    rsync -r $outDir /var/www/html/wx4stg/
+    outDir=`realpath $myDir/$productDir/output/`/.
+    rsync -ur $outDir /var/www/html/wx4stg/
 done
 cd $startingDir
