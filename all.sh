@@ -1,4 +1,5 @@
 #!/bin/bash
+source config.txt
 startingDir=`pwd`
 relMyDir=`dirname $BASH_SOURCE`
 myDir=`realpath $relMyDir`
@@ -10,6 +11,7 @@ do
     bash generate.sh
     cd $myDir
     outDir=`realpath $myDir/$productDir/output/`/.
-    rsync -ur $outDir /var/www/html/wx4stg/
+    rsync -ur $outDir $targetDir
 done
+python3 cleanupHDWX.py $purgePlotsAfter $targetDir
 cd $startingDir

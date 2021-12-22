@@ -1,0 +1,4 @@
+# Destination directory to send files
+targetDir="/var/www/html/wx4stg/"
+# Time (in hours) to purge plots
+purgePlotsAfter="48"
