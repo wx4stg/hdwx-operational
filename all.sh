@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ ! -f ~/mambaforge/envs/HDWX/bin/python3 ]
 then
-    if [ -f ~/miniconda3/envs/HDWX/bin/python3 ]
+    if [ ! -f ~/miniconda3/envs/HDWX/bin/python3 ]
     then
         echo "HDWX requires a python environment named 'HDWX'"
         echo "Please install mambaforge and run 'mamba env create -f hdwx-env.yml'"
@@ -29,6 +29,8 @@ then
     echo "Please configure how long data should be kept in config.txt"
     exit
 fi
+echo "I MADE IT"
+exit
 productDirs=(*/)
 for productDir in "${productDirs[@]}"
 do
