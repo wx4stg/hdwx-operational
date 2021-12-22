@@ -29,8 +29,6 @@ then
     echo "Please configure how long data should be kept in config.txt"
     exit
 fi
-echo "I MADE IT"
-exit
 productDirs=(*/)
 for productDir in "${productDirs[@]}"
 do
