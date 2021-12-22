@@ -1,4 +1,19 @@
 #!/bin/bash
+if [ ! -f ~/mambaforge/envs/HDWX/bin/python3 ]
+then
+    if [ -f ~/miniconda3/envs/HDWX/bin/python3 ]
+    then
+        echo "HDWX requires a python environment named 'HDWX'"
+        echo "Please install mambaforge and run 'mamba env create -f hdwx-env.yml'"
+        echo "or instal miniconda and run 'conda env create -f hdwx-env.yml'"
+        exit
+    fi
+fi
+if [ "${BASH_VERSINFO:-0}" -lt 5 ]
+then
+    echo "HDWX requires bash 5.0 or newer. Please upgrade."
+    exit
+fi
 source config.txt
 startingDir=`pwd`
 relMyDir=`dirname $BASH_SOURCE`
