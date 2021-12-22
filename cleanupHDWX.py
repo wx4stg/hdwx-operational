@@ -5,6 +5,7 @@
 import sys
 from datetime import datetime as dt, timedelta
 from os import path, listdir, remove
+from shutil import rmtree
 import json
 
 # cleanupHDWX.py <purgeAfterHours> <HDWX server root>
@@ -39,11 +40,11 @@ if __name__ == "__main__":
                     # Now we retrieve the productPath from the freshly read in dict
                     productPath = productData["productPath"]
                     # Now we need the pathExtension which can be obtained from the run's json file, in hdwxRootPath/metadata/products/<productID>/<runtime>.json
-                    runFilePath = path.join(runsMetadataDir, runFileName) 
+                    runFilePath = path.join(productMetadataDir, runFileName) 
                     with open(runFilePath) as jsonRead:
                         runData = json.load(jsonRead)
                     runPathExtension = runData["pathExtension"]
                     # Now we know where the frames for this product are located, and we can purge them!
-                    remove(path.join(path.join(hdwxRootPath, productPath), runPathExtension))
+                    rmtree(path.join(path.join(hdwxRootPath, productPath), runPathExtension))
                     # Also remove the json data
                     remove(runFilePath)
