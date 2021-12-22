@@ -1,4 +1,4 @@
 # Destination directory to send files
-targetDir="/var/www/html/wx4stg/"
+targetDir="" # type absolute path between quotes
 # Time (in hours) to purge plots
-purgePlotsAfter="48"
+purgePlotsAfter="" # type integer between quotes
