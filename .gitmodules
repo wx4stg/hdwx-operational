@@ -1,3 +1,6 @@
 [submodule "hdwx-modelplotter"]
 	path = hdwx-modelplotter
 	url = git@github.tamu.edu:samgardner4/hdwx-modelplotter.git
+[submodule "hdwx-hlma"]
+	path = hdwx-hlma
+	url = git@github.tamu.edu:samgardner4/hdwx-hlma.git
