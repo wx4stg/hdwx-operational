@@ -44,7 +44,8 @@ if __name__ == "__main__":
                     with open(runFilePath) as jsonRead:
                         runData = json.load(jsonRead)
                     runPathExtension = runData["pathExtension"]
-                    # Now we know where the frames for this product are located, and we can purge them!
-                    rmtree(path.join(path.join(hdwxRootPath, productPath), runPathExtension))
-                    # Also remove the json data
-                    remove(runFilePath)
+                    if "gr2a" not in productPath:
+                        # Now we know where the frames for this product are located, and we can purge them!
+                        rmtree(path.join(path.join(hdwxRootPath, productPath), runPathExtension))
+                        # Also remove the json data
+                        remove(runFilePath)
