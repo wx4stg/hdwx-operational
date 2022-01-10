@@ -9,6 +9,8 @@ then
         exit
     fi
 fi
+eval "$(conda shell.bash hook)"
+conda activate HDWX
 if [ "${BASH_VERSINFO:-0}" -lt 5 ]
 then
     echo "HDWX requires bash 5.0 or newer. Please upgrade."
@@ -38,5 +40,6 @@ do
     outDir=`realpath $myDir/$productDir/output/`/.
     rsync -ur $outDir $targetDir
 done
+python3 productTypeJsonManager.py $targetDir
 python3 cleanupHDWX.py $purgePlotsAfter $targetDir
 cd $startingDir
