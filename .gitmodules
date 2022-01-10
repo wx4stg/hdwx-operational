@@ -4,3 +4,6 @@
 [submodule "hdwx-hlma"]
 	path = hdwx-hlma
 	url = git@github.tamu.edu:samgardner4/hdwx-hlma.git
+[submodule "hdwx-adrad"]
+	path = hdwx-adrad
+	url = git@github.tamu.edu:samgardner4/hdwx-adrad.git
