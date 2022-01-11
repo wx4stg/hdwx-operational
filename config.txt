@@ -1,4 +1,4 @@
 # Destination directory to send files
-targetDir="" # type absolute path between quotes
+targetDir="/Users/stgardner4/Downloads/wx4stg/" # type absolute path between quotes
 # Time (in hours) to purge plots
-purgePlotsAfter="" # type integer between quotes
+purgePlotsAfter="48" # type integer between quotes
