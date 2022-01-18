@@ -5,6 +5,7 @@
 from os import path, listdir
 import json
 import sys
+from pathlib import Path
 
 if __name__ == '__main__':
     basePath = path.realpath(path.dirname(__file__))
@@ -24,6 +25,7 @@ if __name__ == '__main__':
                     productTypes[jsonFile] = jsonForProdType
     targetDir = sys.argv[1]
     masterProductTypesDir = path.join(targetDir, "metadata", "productTypes")
+    Path(masterProductTypesDir).mkdir(parents=True, exist_ok=True)
     for jsonName in productTypes.keys():
         with open(path.join(masterProductTypesDir, jsonName), "w") as jsonWrite:
             json.dump(productTypes[jsonName], jsonWrite, indent=4)

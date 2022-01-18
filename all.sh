@@ -36,7 +36,7 @@ do
     bash generate.sh
     cd $myDir
     outDir=`realpath $myDir/$productDir/output/`/.
-    rsync -ur $outDir $targetDir
+    rsync -ur $outDir $targetDir --exclude=productTypes/
 done
 python3 productTypeJsonManager.py $targetDir
 python3 cleanupHDWX.py $purgePlotsAfter $targetDir
