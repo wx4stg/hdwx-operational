@@ -2,7 +2,7 @@
 # Combines product metadata of the same productType distributed across different submodules
 # Created 10 Janurary 2022 by Sam Gardner <stgardner4@tamu.edu>
 
-from os import path, listdir
+from os import path, listdir, chmod
 import json
 import sys
 from pathlib import Path
@@ -29,3 +29,4 @@ if __name__ == '__main__':
     for jsonName in productTypes.keys():
         with open(path.join(masterProductTypesDir, jsonName), "w") as jsonWrite:
             json.dump(productTypes[jsonName], jsonWrite, indent=4)
+        chmod(path.join(masterProductTypesDir, jsonName), 0o644)
