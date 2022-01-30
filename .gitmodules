@@ -7,3 +7,6 @@
 [submodule "hdwx-adrad"]
 	path = hdwx-adrad
 	url = git@github.tamu.edu:samgardner4/hdwx-adrad.git
+[submodule "hdwx-activitymonitor"]
+	path = hdwx-activitymonitor
+	url = git@github.tamu.edu:samgardner4/hdwx-activitymonitor.git
