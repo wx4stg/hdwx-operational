@@ -16,13 +16,14 @@ if __name__ == '__main__':
         prodProductTypesDir = path.join(basePath, productMod, "output", "metadata", "productTypes")
         if path.exists(prodProductTypesDir):
             for jsonFile in sorted(listdir(prodProductTypesDir)):
-                with open(path.join(prodProductTypesDir, jsonFile), "r") as jsonRead:
-                    jsonForProdType = json.load(jsonRead)
-                if jsonFile in productTypes.keys():
-                    prevProdTypeJson = productTypes[jsonFile]
-                    [prevProdTypeJson["products"].append(product) for product in jsonForProdType["products"]]
-                else:
-                    productTypes[jsonFile] = jsonForProdType
+                if ".json" in jsonFile:
+                    with open(path.join(prodProductTypesDir, jsonFile), "r") as jsonRead:
+                        jsonForProdType = json.load(jsonRead)
+                    if jsonFile in productTypes.keys():
+                        prevProdTypeJson = productTypes[jsonFile]
+                        [prevProdTypeJson["products"].append(product) for product in jsonForProdType["products"]]
+                    else:
+                        productTypes[jsonFile] = jsonForProdType
     targetDir = sys.argv[1]
     masterProductTypesDir = path.join(targetDir, "metadata", "productTypes")
     Path(masterProductTypesDir).mkdir(parents=True, exist_ok=True)
