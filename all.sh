@@ -37,7 +37,7 @@ do
     cd $myDir
     python3 backportHDWX.py
     outDir=`realpath $myDir/$productDir/output/`/.
-    rsync -ur $outDir $targetDir --exclude=productTypes/
+    rsync -ulrH $outDir $targetDir --exclude=productTypes/
 done
 python3 productTypeJsonManager.py $targetDir
 python3 cleanupHDWX.py $purgePlotsAfter $targetDir
