@@ -35,6 +35,7 @@ do
     cd $productDir
     bash generate.sh
     cd $myDir
+    python3 backportHDWX.py
     outDir=`realpath $myDir/$productDir/output/`/.
     rsync -ur $outDir $targetDir --exclude=productTypes/
 done
