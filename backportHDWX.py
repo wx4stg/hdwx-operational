@@ -3,7 +3,8 @@
 # Created 2 Feburary 2022 by Sam Gardner <stgardner4@tamu.edu>
 
 import json
-from os import path, listdir, symlink, remove, chdir
+from os import path, listdir, symlink, remove, chdir , getcwd
+import imageio
 
 if __name__ == "__main__":
     basePath = path.realpath(path.dirname(__file__))
@@ -28,3 +29,12 @@ if __name__ == "__main__":
                     if path.exists(symlinkSrc):
                         remove(symlinkSrc)
                     symlink(latestRunPath, symlinkSrc)
+                    if productMetadata["isGIS"] == False:
+                        chdir(path.join(productOutPath, "latest"))
+                        for pngFile in listdir(getcwd()):
+                            if ".png" in pngFile:
+                                gifFile = pngFile.replace(".png", ".gif")
+                                if not path.exists(gifFile):
+                                    with imageio.get_writer(gifFile, mode="I") as writer:
+                                        imageToConvert = imageio.imread(pngFile)
+                                        writer.append_data(imageToConvert)
