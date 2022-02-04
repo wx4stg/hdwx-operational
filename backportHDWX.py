@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Backwards compatibility script to port python HDWX products to GEMPAK
+# Backwards compatibility script to port python HDWX products to GEMPAK HDWX viewer
 # Created 2 Feburary 2022 by Sam Gardner <stgardner4@tamu.edu>
 
 import json
@@ -31,10 +31,18 @@ if __name__ == "__main__":
                     symlink(latestRunPath, symlinkSrc)
                     if productMetadata["isGIS"] == False:
                         chdir(path.join(productOutPath, "latest"))
-                        for pngFile in listdir(getcwd()):
+                        for pngFile in sorted(listdir(getcwd())):
                             if ".png" in pngFile:
-                                gifFile = pngFile.replace(".png", ".gif")
-                                if not path.exists(gifFile):
-                                    with imageio.get_writer(gifFile, mode="I") as writer:
-                                        imageToConvert = imageio.imread(pngFile)
-                                        writer.append_data(imageToConvert)
+                                for i in range(len(latestRunMetadata["productFrames"])):
+                                    frameDict = latestRunMetadata["productFrames"][i]
+                                    if pngFile[0] == "0":
+                                        pngFileComp = pngFile[1:]
+                                    else:
+                                        pngFileComp = pngFile
+                                    if pngFileComp == frameDict["filename"]:
+                                        print(frameDict)
+                                        gifFile = "frame"+str(i)+".gif"
+                                        if not path.exists(gifFile):
+                                            with imageio.get_writer(gifFile, mode="I") as writer:
+                                                imageToConvert = imageio.imread(pngFile)
+                                                writer.append_data(imageToConvert)
