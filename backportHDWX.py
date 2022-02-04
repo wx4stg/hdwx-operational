@@ -3,7 +3,7 @@
 # Created 2 Feburary 2022 by Sam Gardner <stgardner4@tamu.edu>
 
 import json
-from os import path, listdir, symlink, remove
+from os import path, listdir, symlink, remove, chdir
 
 if __name__ == "__main__":
     basePath = path.realpath(path.dirname(__file__))
@@ -21,8 +21,10 @@ if __name__ == "__main__":
                 with open(productJsonPath, "r") as jsonRead:
                     productMetadata = json.load(jsonRead)
                 productOutPath = path.join(path.dirname(path.dirname(productJsonPath)), productMetadata["productPath"])
-                latestRunPath = path.join(productOutPath, latestRunMetadata["pathExtension"])
-                symlinkSrc = path.join(productOutPath, "latest")
-                if path.exists(symlinkSrc):
-                    remove(symlinkSrc)
-                symlink(latestRunPath, symlinkSrc)
+                chdir(productOutPath)
+                latestRunPath = latestRunMetadata["pathExtension"]
+                if latestRunPath != "":
+                    symlinkSrc = "latest"
+                    if path.exists(symlinkSrc):
+                        remove(symlinkSrc)
+                    symlink(latestRunPath, symlinkSrc)
