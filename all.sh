@@ -21,12 +21,12 @@ cd $myDir
 source $myDir/config.txt
 if [ -z $targetDir ]
 then
-    echo "Please configure a destination directory in config.txt"
+    echo "Please configure options in config.txt"
     exit
 fi
 if [ -z $purgePlotsAfter ]
 then
-    echo "Please configure how long data should be kept in config.txt"
+    echo "Please configure options in config.txt"
     exit
 fi
 productDirs=(*/)
@@ -35,7 +35,17 @@ do
     cd $productDir
     bash generate.sh
     cd $myDir
-    python3 backportHDWX.py
+    if $backwardsCompatibility
+    then
+        if [ -f ~/mambaforge/envs/HDWX/bin/python3 ]
+        then
+            ~/mambaforge/envs/HDWX/bin/python3 backportHDWX.py
+        fi
+        if [ -f ~/miniconda3/envs/HDWX/bin/python3 ]
+        then
+            ~/miniconda3/envs/HDWX/bin/python3 backportHDWX.py
+        fi
+    fi
     outDir=`realpath $myDir/$productDir/output/`/.
     rsync -ulrH $outDir $targetDir --exclude=productTypes/
 done

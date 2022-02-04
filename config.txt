@@ -2,3 +2,5 @@
 targetDir="" # type absolute path between quotes
 # Time (in hours) to purge plots
 purgePlotsAfter="" # type integer between quotes
+# True to enable backwards compatibility with GEMPAK HDWX product viewer, False to save time
+backwardsCompatibility=
