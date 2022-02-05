@@ -35,12 +35,11 @@ if __name__ == "__main__":
                             if ".png" in pngFile:
                                 for i in range(len(latestRunMetadata["productFrames"])):
                                     frameDict = latestRunMetadata["productFrames"][i]
-                                    if pngFile[0] == "0":
+                                    if pngFile[0] == "0" and pngFile[1] != ".png":
                                         pngFileComp = pngFile[1:]
                                     else:
                                         pngFileComp = pngFile
                                     if pngFileComp == frameDict["filename"]:
-                                        print(frameDict)
                                         gifFile = "frame"+str(i)+".gif"
                                         if not path.exists(gifFile):
                                             with imageio.get_writer(gifFile, mode="I") as writer:
