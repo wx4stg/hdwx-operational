@@ -4,6 +4,7 @@
 
 import json
 from os import path, listdir, symlink, remove, chdir , getcwd
+from shutil import copyfile
 import imageio
 
 if __name__ == "__main__":
@@ -35,7 +36,7 @@ if __name__ == "__main__":
                             if ".png" in pngFile:
                                 for i in range(len(latestRunMetadata["productFrames"])):
                                     frameDict = latestRunMetadata["productFrames"][i]
-                                    if pngFile[0] == "0" and pngFile[1] != ".png":
+                                    if pngFile[0] == "0" and pngFile[1:] != ".png":
                                         pngFileComp = pngFile[1:]
                                     else:
                                         pngFileComp = pngFile
