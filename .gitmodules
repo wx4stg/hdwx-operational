@@ -10,3 +10,6 @@
 [submodule "hdwx-activitymonitor"]
 	path = hdwx-activitymonitor
 	url = git@github.tamu.edu:samgardner4/hdwx-activitymonitor.git
+[submodule "hdwx-mesonetplotter"]
+	path = hdwx-mesonetplotter
+	url = git@github.tamu.edu:samgardner4/hdwx-mesonetplotter.git
