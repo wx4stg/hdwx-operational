@@ -46,3 +46,4 @@ if __name__ == "__main__":
                                             with imageio.get_writer(gifFile, mode="I") as writer:
                                                 imageToConvert = imageio.imread(pngFile)
                                                 writer.append_data(imageToConvert)
+                                                copyfile(gifFile, "thumb.gif")
