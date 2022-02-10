@@ -32,6 +32,7 @@ if __name__ == "__main__":
                     symlink(latestRunPath, symlinkSrc)
                     if productMetadata["isGIS"] == False:
                         chdir(path.join(productOutPath, "latest"))
+                        gifFile = ""
                         for pngFile in sorted(listdir(getcwd())):
                             if ".png" in pngFile:
                                 for i in range(len(latestRunMetadata["productFrames"])):
@@ -46,4 +47,5 @@ if __name__ == "__main__":
                                             with imageio.get_writer(gifFile, mode="I") as writer:
                                                 imageToConvert = imageio.imread(pngFile)
                                                 writer.append_data(imageToConvert)
-                                                copyfile(gifFile, "thumb.gif")
+                        if ".gif" in gifFile:
+                            copyfile(gifFile, "thumb.gif")
