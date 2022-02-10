@@ -1,8 +1,8 @@
 # Destination directory to send files
-targetDir="/var/www/html/wx4stg/pyhdwx/" # type absolute path between quotes
+targetDir="" # type absolute path between quotes
 # Time (in hours) to purge plots
-purgePlotsAfter="24" # type integer between quotes
+purgePlotsAfter="" # type integer between quotes
 # True to enable backwards compatibility with GEMPAK HDWX product viewer, False to save time
-backwardsCompatibility=true
+backwardsCompatibility=
 # Name of the conda environment to generate products. If you don't know what this means/if you're following the install guide, just set it to "HDWX"
-condaEnvName="HDWX-dev"
+condaEnvName=""
