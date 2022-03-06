@@ -1,4 +1,9 @@
 #!/bin/bash
+startingDir=`pwd`
+relMyDir=`dirname $BASH_SOURCE`
+myDir=`realpath $relMyDir`
+cd $myDir
+source $myDir/config.txt
 if [ ! -f ~/mambaforge/envs/$condaEnvName/bin/python3 ]
 then
     if [ ! -f ~/miniconda3/envs/$condaEnvName/bin/python3 ]
@@ -14,11 +19,6 @@ then
     echo "HDWX requires bash 5.0 or newer. Please upgrade."
     exit
 fi
-startingDir=`pwd`
-relMyDir=`dirname $BASH_SOURCE`
-myDir=`realpath $relMyDir`
-cd $myDir
-source $myDir/config.txt
 if [ -z $targetDir ]
 then
     echo "Please configure options in config.txt"
