@@ -4,15 +4,12 @@ relMyDir=`dirname $BASH_SOURCE`
 myDir=`realpath $relMyDir`
 cd $myDir
 source $myDir/config.txt
-if [ ! -f ~/mambaforge/envs/$condaEnvName/bin/python3 ]
+if [ ! -f $condaRootPath/envs/$condaEnvName/bin/python3 ]
 then
-    if [ ! -f ~/miniconda3/envs/$condaEnvName/bin/python3 ]
-    then
-        echo "HDWX requires a python environment named 'HDWX'"
-        echo "Please install mambaforge and run 'mamba env create -f hdwx-env.yml'"
-        echo "or instal miniconda and run 'conda env create -f hdwx-env.yml'"
-        exit
-    fi
+    echo "HDWX requires a python environment named 'HDWX'"
+    echo "Please install mambaforge and run 'mamba env create -f hdwx-env.yml'"
+    echo "or instal miniconda and run 'conda env create -f hdwx-env.yml'"
+    exit
 fi
 if [ "${BASH_VERSINFO:-0}" -lt 5 ]
 then
@@ -47,13 +44,9 @@ do
     cd $myDir
     if $backwardsCompatibility
     then
-        if [ -f ~/mambaforge/envs/$condaEnvName/bin/python3 ]
+        if [ -f $condaRootPath/envs/$condaEnvName/bin/python3 ]
         then
-            ~/mambaforge/envs/$condaEnvName/bin/python3 backportHDWX.py
-        fi
-        if [ -f ~/miniconda3/envs/$condaEnvName/bin/python3 ]
-        then
-            ~/miniconda3/envs/$condaEnvName/bin/python3 backportHDWX.py
+            $condaRootPath/envs/$condaEnvName/bin/python3 backportHDWX.py
         fi
     fi
     outDir=`realpath $myDir/$productDir/output/`/.
