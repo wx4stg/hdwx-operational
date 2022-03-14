@@ -4,5 +4,7 @@ targetDir="" # type absolute path between quotes
 purgePlotsAfter="" # type integer between quotes
 # True to enable backwards compatibility with GEMPAK HDWX product viewer, False to save time
 backwardsCompatibility=
+# Path to your conda installation. This is usually ~/miniconda/ for miniconda, $condaRootPath/ for miniforge+mamba, ~/miniforge/ for miniforge, or ~/micromamba/ for micromamba.
+condaRootPath=""
 # Name of the conda environment to generate products. If you don't know what this means/if you're following the install guide, just set it to "HDWX"
 condaEnvName=""
