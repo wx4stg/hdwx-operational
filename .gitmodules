@@ -13,3 +13,6 @@
 [submodule "hdwx-mesonetplotter"]
 	path = hdwx-mesonetplotter
 	url = git@github.tamu.edu:samgardner4/hdwx-mesonetplotter.git
+[submodule "hdwx-mrms"]
+	path = hdwx-mrms
+	url = git@github.tamu.edu:samgardner4/hdwx-mrms.git
