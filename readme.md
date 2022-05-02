@@ -23,7 +23,7 @@ When executed, all.sh opens the parent directory of itself (hdwx-operational), l
 (1) Ok, the automatic environment install didn't work. Here's how to create the environment manually (use commands as-is if you're using mambaforge, else replace `mamba` with `conda` for miniconda installs):
 - `mamba create --name HDWX`
 - `mamba activate HDWX`
-- `mamba install arm_pyart atomicwrites cartopy cfgrib imageio matplotlib metpy netcdf4 numpy pandas pillow pyepsg scikit-learn scipy xarray`
+- `mamba install arm_pyart atomicwrites cartopy cfgrib imageio lxml matplotlib metpy netcdf4 numpy pandas pillow pyepsg scikit-learn scipy xarray -c conda-forge`
 
 
-(2) If you're feeling extra risky, you can try a `mamba update --all` to fetch the latest versions of all packages, but be aware that this may break your install and you may have to remove and recreate the environment or update the python code in the submodules to remove now-deprecated function calls that I had no idea would be deprecated when I wrote this file.
+~~(2) If you're feeling extra risky, you can try a `mamba update --all` to fetch the latest versions of all packages, but be aware that this may break your install and you may have to remove and recreate the environment or update the python code in the submodules to remove now-deprecated function calls that I had no idea would be deprecated when I wrote this file.~~ jk, don't do that, it'll break eccodes which will break cfgrib which will break xarray which will break modelplotter and mrms (and maybe others)
