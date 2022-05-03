@@ -39,9 +39,11 @@ fi
 productDirs=(*/)
 for productDir in "${productDirs[@]}"
 do
+    echo "entering $productDir"
     cd $productDir
     bash generate.sh
     cd $myDir
+    echo "Done generating $productDir"
     if $backwardsCompatibility
     then
         if [ -f $condaRootPath/envs/$condaEnvName/bin/python3 ]
