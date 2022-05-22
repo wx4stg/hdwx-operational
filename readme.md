@@ -4,7 +4,7 @@
 
 ## Installation
 
-1. Python HDWX has been tested on CentOS 7, Ubuntu 20.04, and macOS 10.15 and 11.0. You'll need an operating system (duh), and HDWX at the time of writing this, I don't ever intend to add support for Windows.
+1. Python HDWX has been tested on CentOS 7, Ubuntu 20.04, and macOS 10.15 and 11.0. You'll need an operating system (duh), and at the time of writing this, I don't ever intend to add support for Windows.
 2. Clone this repo (*important: with the* `--recursive` *flag*) to somewhere on your computer. This can realistically be anywhere, but on everything I've done, I've always just shoved it in my home folder, `~/hdwx-operational/`
 3. You will need to install bash 5.0 or newer. At the time of this writing, the limiting factor is modelplotter's `generate.sh`'s method of tracking PIDs to limit the number of workers active. If you absolutely need bash 4.X or older, you'll definitely need to make changes there to get this to work, but you could just install bash 5.0 to avoid that whole problem.
 4. You will also need to install python via a python package manager. Currently supported package managers are [mambaforge](https://github.com/conda-forge/miniforge#mambaforge) (recommended) and [miniconda](https://docs.conda.io/en/latest/miniconda.html) (not recommended). I like mambaforge better because it's generally faster and includes the community built conda-forge repository of python packages as a default source, while miniconda uses the anaconda repository which has packages that are considered to be "stable and known to work together" but are not always the latest version of thpse packages.
@@ -24,6 +24,7 @@ When executed, all.sh opens the parent directory of itself (hdwx-operational), l
 - `mamba create --name HDWX`
 - `mamba activate HDWX`
 - `mamba install arm_pyart atomicwrites cartopy cfgrib imageio lxml matplotlib metpy netcdf4 numpy pandas pillow pyepsg scikit-learn scipy xarray -c conda-forge`
+- `pip install ecmwf-opendata`
 
 
 ~~(2) If you're feeling extra risky, you can try a `mamba update --all` to fetch the latest versions of all packages, but be aware that this may break your install and you may have to remove and recreate the environment or update the python code in the submodules to remove now-deprecated function calls that I had no idea would be deprecated when I wrote this file.~~ jk, don't do that, it'll break eccodes which will break cfgrib which will break xarray which will break modelplotter and mrms (and maybe others)
