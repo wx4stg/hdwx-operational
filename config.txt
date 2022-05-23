@@ -1,10 +1,10 @@
 # Destination directory to send files
-targetDir="" # type absolute path between quotes
+targetDir="/wxgen3/products/" # type absolute path between quotes
 # Time (in hours) to purge plots
-purgePlotsAfter="" # type integer between quotes
+purgePlotsAfter="192" # type integer between quotes
 # True to enable backwards compatibility with GEMPAK HDWX product viewer, False to save time
-backwardsCompatibility=
+backwardsCompatibility=true
 # Path to your conda installation. This is usually ~/miniconda/ for miniconda, $condaRootPath/ for miniforge+mamba, ~/miniforge/ for miniforge, or ~/micromamba/ for micromamba.
-condaRootPath=""
+condaRootPath="/opt/mamba/"
 # Name of the conda environment to generate products. If you don't know what this means/if you're following the install guide, just set it to "HDWX"
-condaEnvName=""
+condaEnvName="HDWX"
