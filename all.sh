@@ -48,7 +48,7 @@ do
     then
         if [ -f $condaRootPath/envs/$condaEnvName/bin/python3 ]
         then
-            $condaRootPath/envs/$condaEnvName/bin/python3 backportHDWX.py
+            $condaRootPath/envs/$condaEnvName/bin/python3 backportHDWX.py $productDir
         fi
     fi
     outDir=`realpath $myDir/$productDir/output/`/.
