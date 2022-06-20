@@ -156,19 +156,21 @@ if __name__ == "__main__":
                             # re-converting
                             if sourceFile in lastPassSrcAndDest.keys():
                                 sourceFile = lastPassSrcAndDest[sourceFile]
-                            # if the source is already a gif, all we need to do is copy it
-                            if ".gif" in sourceFile:
-                                copyfile(sourceFile, targetFileNow)
-                            # Otherwise, we have to convert the image to a GIF first, then write out
-                            else:
-                                with imageio.get_writer(targetFileNow, mode="I") as writer:
-                                    imageToConvert = imageio.imread(sourceFile)
-                                    writer.append_data(imageToConvert)
-                            # If the image we just wrote is in the "framesFromProduct" array, then we need to store what we converted it to,
-                            # in case the original gets deleted by cleanup. This will also speed up the next pass as we can just copy the GIF
-                            # next time instead of re-converting the png
-                            if i < len(framesFromProduct):
-                                thisPassSrcAndDest[sourceFile] = targetFileEventually
+                            # Make sure this file path exists...
+                            if path.exists(sourceFile):
+                                # if the source is already a gif, all we need to do is copy it
+                                if ".gif" in sourceFile:
+                                    copyfile(sourceFile, targetFileNow)
+                                # Otherwise, we have to convert the image to a GIF first, then write out
+                                else:
+                                    with imageio.get_writer(targetFileNow, mode="I") as writer:
+                                        imageToConvert = imageio.imread(sourceFile)
+                                        writer.append_data(imageToConvert)
+                                # If the image we just wrote is in the "framesFromProduct" array, then we need to store what we converted it to,
+                                # in case the original gets deleted by cleanup. This will also speed up the next pass as we can just copy the GIF
+                                # next time instead of re-converting the png
+                                if i < len(framesFromProduct):
+                                    thisPassSrcAndDest[sourceFile] = targetFileEventually
                         # Generate a thumbnail from the first image
                         if path.exists(path.join(tempDir, "frame0.gif")):
                             copyfile(path.join(tempDir, "frame0.gif"), path.join(tempDir , "thumb.gif"))
