@@ -8,6 +8,9 @@ import sys
 from pathlib import Path
 
 if __name__ == '__main__':
+    targetDir = sys.argv[1]
+    if "@" in targetDir:
+        exit()
     basePath = path.realpath(path.dirname(__file__))
     productModules = list()
     [productModules.append(productModule) for productModule in sorted(listdir(basePath)) if path.isdir(path.join(basePath, productModule)) and productModule != ".git"]
@@ -24,7 +27,6 @@ if __name__ == '__main__':
                         [prevProdTypeJson["products"].append(product) for product in jsonForProdType["products"]]
                     else:
                         productTypes[jsonFile] = jsonForProdType
-    targetDir = sys.argv[1]
     masterProductTypesDir = path.join(targetDir, "metadata", "productTypes")
     Path(masterProductTypesDir).mkdir(parents=True, exist_ok=True)
     for jsonName in productTypes.keys():

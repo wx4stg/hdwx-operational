@@ -10,10 +10,13 @@ import json
 
 # cleanupHDWX.py <purgeAfterHours> <HDWX server root>
 if __name__ == "__main__":
-    # Get current time for comparison
-    now = dt.utcnow()
     # Get desired time to purge files after from arg 1
     hoursToPurgeAfter = timedelta(hours=int(sys.argv[1]))
+    # If hours to purge after is 0, exit immediately
+    if hoursToPurgeAfter == 0:
+        exit()
+    # Get current time for comparison
+    now = dt.utcnow()
     # Get the supplied path to the HDWX root. This will be the basis for everything we work with.
     hdwxRootPath = sys.argv[2]
     # Get path to hdwxRootPath/metadata/ This is a surprise tool that will help us later...
