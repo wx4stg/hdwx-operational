@@ -1,18 +1,18 @@
 [submodule "hdwx-modelplotter"]
 	path = hdwx-modelplotter
-	url = git@github.tamu.edu:samgardner4/hdwx-modelplotter.git
+	url = git@github.com:wx4stg/hdwx-modelplotter.git
 [submodule "hdwx-hlma"]
 	path = hdwx-hlma
-	url = git@github.tamu.edu:samgardner4/hdwx-hlma.git
+	url = git@github.com:wx4stg/hdwx-hlma.git
 [submodule "hdwx-adrad"]
 	path = hdwx-adrad
-	url = git@github.tamu.edu:samgardner4/hdwx-adrad.git
+	url = git@github.com:wx4stg/hdwx-adrad.git
 [submodule "hdwx-activitymonitor"]
 	path = hdwx-activitymonitor
-	url = git@github.tamu.edu:samgardner4/hdwx-activitymonitor.git
+	url = git@github.com:wx4stg/hdwx-activitymonitor.git
 [submodule "hdwx-mesonetplotter"]
 	path = hdwx-mesonetplotter
-	url = git@github.tamu.edu:samgardner4/hdwx-mesonetplotter.git
+	url = git@github.com:wx4stg/hdwx-mesonetplotter.git
 [submodule "hdwx-mrms"]
 	path = hdwx-mrms
-	url = git@github.tamu.edu:samgardner4/hdwx-mrms.git
+	url = git@github.com:wx4stg/hdwx-mrms.git
