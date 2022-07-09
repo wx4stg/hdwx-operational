@@ -7,9 +7,6 @@
 [submodule "hdwx-adrad"]
 	path = hdwx-adrad
 	url = git@github.com:wx4stg/hdwx-adrad.git
-[submodule "hdwx-activitymonitor"]
-	path = hdwx-activitymonitor
-	url = git@github.com:wx4stg/hdwx-activitymonitor.git
 [submodule "hdwx-mesonetplotter"]
 	path = hdwx-mesonetplotter
 	url = git@github.com:wx4stg/hdwx-mesonetplotter.git
