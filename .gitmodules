@@ -13,3 +13,6 @@
 [submodule "hdwx-mrms"]
 	path = hdwx-mrms
 	url = git@github.com:wx4stg/hdwx-mrms.git
+[submodule "hdwx-activitymonitor"]
+	path = hdwx-activitymonitor
+	url = git@github.com:wx4stg/hdwx-activitymonitor.git
