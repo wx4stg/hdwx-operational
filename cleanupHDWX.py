@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Cleanup/resource management for next-gen HDWX server root
+# Cleanup/resource management for python-based HDWX server root
 # Created 21 December 2021 by Sam Gardner <stgardner4@tamu.edu>
 
 import sys
