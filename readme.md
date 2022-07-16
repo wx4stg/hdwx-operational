@@ -23,7 +23,7 @@ When executed, all.sh opens the parent directory of itself (hdwx-operational), l
 (1) Ok, the automatic environment install didn't work. Here's how to create the environment manually (use commands as-is if you're using mambaforge, else replace `mamba` with `conda` for miniconda installs):
 - `mamba create --name HDWX`
 - `mamba activate HDWX`
-- `mamba install arm_pyart atomicwrites cartopy cfgrib imageio lxml matplotlib metpy netcdf4 numpy pandas pillow pyepsg scikit-learn scipy xarray -c conda-forge`
+- `mamba install arm_pyart atomicwrites cartopy cfgrib imageio lxml matplotlib metpy natsort netcdf4 numpy pandas pillow pyepsg scikit-learn scipy xarray -c conda-forge`
 - `pip install ecmwf-opendata`
 
 
