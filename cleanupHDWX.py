@@ -40,6 +40,12 @@ if __name__ == "__main__":
                     with open(path.join(metadataTopDir, productID+".json"), "r") as jsonRead:
                         # Read the json file
                         productData = json.load(jsonRead)
+                    # We want to keep ADRAD data for one year though
+                    if "ADRAD" in productData["productDescription"]:
+                        if runTime < now - timedelta(days=365):
+                            pass
+                        else:
+                            continue
                     # Now we retrieve the productPath from the freshly read in dict
                     productPath = productData["productPath"]
                     # Now we need the pathExtension which can be obtained from the run's json file, in hdwxRootPath/metadata/products/<productID>/<runtime>.json
