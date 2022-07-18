@@ -67,6 +67,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 101:
         productDesc = "Mesonet Farm Timeseries"
         productPath = "products/mesonet/Farm/timeseries/"
+        runPathExtension = "last24hrs"
         isFcst = False
         fileExt = "png"
         dispFrames = 1
@@ -83,6 +84,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 103:
         productDesc = "Mesonet Gardens Timeseries"
         productPath = "products/mesonet/Farm/timeseries/"
+        runPathExtension = "last24hrs"
         isFcst = False
         fileExt = "png"
         dispFrames = 1
