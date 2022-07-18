@@ -23,7 +23,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
 
     """
     publishTime = dt.utcnow()
-    runPathExtension = validTime.strftime("%Y/%m/%d/%H00/")
+    runPathExtension = runTime.strftime("%Y/%m/%d/%H00/")
     if productID == 0:
         productDesc = "MRMS Reflectivity At Lowest Altitude"
         productPath = "gisproducts/radar/RALA/"
@@ -67,6 +67,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 101:
         productDesc = "Mesonet Farm Timeseries"
         productPath = "products/mesonet/Farm/timeseries/"
+        runPathExtension = "last24hrs"
         isFcst = False
         fileExt = "png"
         dispFrames = 1
@@ -83,6 +84,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 103:
         productDesc = "Mesonet Gardens Timeseries"
         productPath = "products/mesonet/Farm/timeseries/"
+        runPathExtension = "last24hrs"
         isFcst = False
         fileExt = "png"
         dispFrames = 1
@@ -704,7 +706,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         productRunDict = {
             "publishTime" : publishTime.strftime("%Y%m%d%H%M"),
             "pathExtension" : runPathExtension,
-            "runName" : validTime.strftime("%d %b %Y %HZ"),
+            "runName" : runTime.strftime("%d %b %Y %HZ"),
             "availableFrameCount" : len(framesArray),
             "totalFrameCount" : totalFrameCount,
             "productFrames" : sorted(framesArray, key=lambda dict: int(dict["valid"])) # productFramesArray, sorted by increasing valid Time
