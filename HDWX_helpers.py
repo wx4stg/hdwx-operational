@@ -651,6 +651,12 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         else:
             totalFrameCount = 31
     
+    if isFcst:
+        fHour = validTime - runTime
+        fHour = int(fHour.seconds / 3600)
+    else:
+        fHour = 0
+
     if gisInfo == ["0,0", "0,0"]:
         isGIS = False
     else:
@@ -691,7 +697,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
             # If that file didn't exist, then create an empty list instead
             framesArray = list()
         frmDict = {
-                "fhour" : 0, # forecast hour is 0 for non-forecasts
+                "fhour" : fHour,
                 "filename" : fileName,
                 "gisInfo" : gisInfo,
                 "valid" : validTime.strftime("%Y%m%d%H%M"),
