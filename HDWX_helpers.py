@@ -653,7 +653,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     
     if isFcst:
         fHour = validTime - runTime
-        fHour = int(fHour.seconds / 3600)
+        fHour = int(fHour.total_seconds() / 3600)
     else:
         fHour = 0
 
