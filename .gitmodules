@@ -16,3 +16,6 @@
 [submodule "hdwx-activitymonitor"]
 	path = hdwx-activitymonitor
 	url = git@github.com:wx4stg/hdwx-activitymonitor.git
+[submodule "hdwx-satellite"]
+	path = hdwx-satellite
+	url = git@github.com:wx4stg/hdwx-satellite.git
