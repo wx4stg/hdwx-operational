@@ -31,8 +31,12 @@ if __name__ == "__main__":
             productMetadataDir = path.join(runsMetadataDir, productID)
             # Each product subdir contains a json file for every run of the product
             for runFileName in listdir(productMetadataDir):
-                # The filename of the json file is a time in UTC, formatted as %Y%m%d%H%M, so convert this to a datetime object
-                runTime = dt.strptime(runFileName, "%Y%m%d%H%M.json")
+                try:
+                    # The filename of the json file is a time in UTC, formatted as %Y%m%d%H%M, so convert this to a datetime object
+                    runTime = dt.strptime(runFileName, "%Y%m%d%H%M.json")
+                except:
+                    remove(path.join(productMetadataDir, runFileName))
+                    continue
                 # If the time older than the purge threshold then we want to purge it and all associated data
                 if runTime < now - hoursToPurgeAfter:
                     # The "associated data" is stored in hdwxRootPath+productPath+pathExtension
