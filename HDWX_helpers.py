@@ -758,5 +758,67 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         json.dump(productTypeDict, jsonWrite, indent=4)
     chmod(productTypeDictPath, 0o644)
 
-def dressImage():
-    pass
+def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=None, cbticks=None, tickhighlight=None, cbextend="neither", colorbarLabel=None, width=1920, height=1080):
+    """
+    Adds standardized HDWX branding to a figure 
+    Parameters:
+    ----------
+    fig: the figure to be modified
+    ax: the primary axes of the figure
+    title: the title of the product
+    validTime: the time the product is valid for
+    fhour: the forecast hour of the model product
+    notice: Copyright/disclaimer text
+    plotHandle: the handle to the plot object that will be used to create the colorbar
+    cbticks: the tick values for the colorbar
+    tickhighlight: the tick values to be highlighted
+    cbextend: whether or not to extend the colorbar, "min", "max", "both", or "neither"
+    colorbarLabel: the label for the colorbar
+    width: the width of the figure in pixels
+    height: the height of the figure in pixels
+
+    """
+    from matplotlib import pyplot as plt
+    from matplotlib import image as mpimg
+    px = 1/plt.rcParams["figure.dpi"]
+    fig.set_size_inches(width*px, height*px)
+    heightOfBottomBar = 100/height
+    insetDistance = 75/width
+    widthOfObjects = 500/width
+    if plotHandle is not None:
+        cbax = fig.add_axes([insetDistance, insetDistance+(10/height), widthOfObjects, .02])
+        if cbticks is None:
+            cb = fig.colorbar(plotHandle, cax=cbax, orientation="horizontal", extend=cbextend)
+        else:
+            cb = fig.colorbar(plotHandle, cax=cbax, orientation="horizontal", extend=cbextend).set_ticks(cbticks)
+            if tickhighlight is not None:
+                targetIdx = list(list(plt.xticks())[0]).index(32)
+                plt.xticks()[-1][targetIdx].set_color("red")
+        if colorbarLabel is not None:
+            cbax.set_xlabel(colorbarLabel)
+    tax = fig.add_axes([0.5-(widthOfObjects/2), insetDistance, widthOfObjects, heightOfBottomBar])
+    if fhour is None:
+        titleStr = title+"\n Valid "+validTime.strftime("%a %-d %b %Y %H%MZ")
+    else:
+        titleStr = title+"\n"+"f"+str(fhour)+" Valid "+validTime.strftime("%a %-d %b %Y %H%MZ")
+    tax.text(0.5, 0.3, titleStr, horizontalalignment="center", verticalalignment="center", fontsize=16)
+    xlabel = "Python HDWX -- Send bugs to stgardner4@tamu.edu"
+    if notice is not None:
+        xlabel = xlabel+"\n"+notice
+    tax.set_xlabel(xlabel)
+    tax.set_facecolor("#00000000")
+    plt.setp(tax.spines.values(), visible=False)
+    tax.tick_params(left=False, labelleft=False)
+    tax.tick_params(bottom=False, labelbottom=False)
+    lax = fig.add_axes([0,0,(ax.get_position().width/3),heightOfBottomBar])
+    lax.set_aspect(2821/11071)
+    lax.axis("off")
+    lax.set_position([(1-(lax.get_position().width+insetDistance)), (lax.get_position().y0), (lax.get_position().width), (lax.get_position().height)])
+    plt.setp(lax.spines.values(), visible=False)
+    atmoLogoPath = path.join(path.abspath(path.dirname(path.dirname(__file__))), "atmoLogo.png")
+    atmoLogo = mpimg.imread(atmoLogoPath)
+    lax.imshow(atmoLogo)
+    ax.set_position([insetDistance, .025+heightOfBottomBar, 1-2*insetDistance, 1-(insetDistance+heightOfBottomBar)])
+    ax.set_box_aspect(height/width)
+    fig.set_facecolor("white")
+    return fig
