@@ -804,6 +804,13 @@ def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=No
                 plt.xticks()[-1][targetIdx].set_color("red")
         if colorbarLabel is not None:
             cbax.set_xlabel(colorbarLabel)
+    else:
+        if colorbarLabel is not None:
+            cbax = fig.add_axes([insetDistance, insetDistance+(10/height), widthOfObjects, .02])
+            plt.setp(cbax.spines.values(), visible=False)
+            cbax.tick_params(left=False, labelleft=False)
+            cbax.tick_params(bottom=False, labelbottom=False)
+            cbax.set_xlabel(colorbarLabel)
     tax = fig.add_axes([0.5-(widthOfObjects/2), insetDistance, widthOfObjects, heightOfBottomBar])
     if fhour is None:
         titleStr = title+"\n Valid "+validTime.strftime("%a %-d %b %Y %H%MZ")
