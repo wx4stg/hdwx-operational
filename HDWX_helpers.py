@@ -61,7 +61,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         productPath = "products/satellite/goes16/geocolor/"
         isFcst = False
         fileExt = "png"
-        dispFrames = 48
+        dispFrames = 24
         productTypeID = 0
         totalFrameCount = -1
     elif productID == 100:
