@@ -322,6 +322,30 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 3
         totalFrameCount = 209
+    elif productID == 308:
+        productDesc = "GFS Simulated Composite Reflectivity"
+        productPath = "gisproducts/gfs/simrefc/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 209
+    elif productID == 309:
+        productDesc = "GFS 1hr Max Updraft Helicity"
+        productPath = "gisproducts/gfs/udhelicity/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 209
+    elif productID == 310:
+        productDesc = "GFS Simulated Composite Reflectivity"
+        productPath = "products/gfs/refccomposite/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 209
     elif productID == 316:
         productDesc = "GFS 500 hPa Winds"
         productPath = "gisproducts/gfs/500wind/"
@@ -346,9 +370,17 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 3
         totalFrameCount = 209
-    elif productID == 390:
-        productDesc = "GFS Surface Wind Divergence"
-        productPath = "products/gfs/divergence/"
+    elif productID == 380:
+        productDesc = "GFS Simulated 1km AGL Reflectivity"
+        productPath = "gisproducts/gfs/simrefd/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 209
+    elif productID == 381:
+        productDesc = "GFS Simulated 1km AGL Reflectivity"
+        productPath = "products/gfs/refdcomposite/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
@@ -386,6 +418,30 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 5
         totalFrameCount = 53
+    elif productID == 508:
+        productDesc = "NAM Simulated Composite Reflectivity"
+        productPath = "gisproducts/nam/simrefc/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
+    elif productID == 509:
+        productDesc = "NAM 1hr Max Updraft Helicity"
+        productPath = "gisproducts/nam/udhelicity/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
+    elif productID == 510:
+        productDesc = "NAM Simulated Composite Reflectivity"
+        productPath = "products/nam/refccomposite/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
     elif productID == 516:
         productDesc = "NAM 500 hPa Winds"
         productPath = "gisproducts/nam/500wind/"
@@ -410,9 +466,17 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 5
         totalFrameCount = 53
-    elif productID == 590:
-        productDesc = "NAM Surface Wind Divergence"
-        productPath = "products/nam/divergence/"
+    elif productID == 580:
+        productDesc = "NAM Simulated 1km AGL Reflectivity"
+        productPath = "gisproducts/nam/simrefd/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
+    elif productID == 581:
+        productDesc = "NAM Simulated 1km AGL Reflectivity"
+        productPath = "products/nam/refdcomposite/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
@@ -450,6 +514,30 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 6
         totalFrameCount = 61
+    elif productID == 608:
+        productDesc = "NAM NEST Simulated Composite Reflectivity"
+        productPath = "gisproducts/namnest/simrefc/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
+    elif productID == 609:
+        productDesc = "NAM NEST 1hr Max Updraft Helicity"
+        productPath = "gisproducts/namnest/udhelicity/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
+    elif productID == 610:
+        productDesc = "NAM NEST Simulated Composite Reflectivity"
+        productPath = "products/namnest/refccomposite/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
     elif productID == 616:
         productDesc = "NAM NEST 500 hPa Winds"
         productPath = "gisproducts/namnest/500wind/"
@@ -474,9 +562,17 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 6
         totalFrameCount = 61
-    elif productID == 690:
-        productDesc = "NAM NEST Surface Wind Divergence"
-        productPath = "products/namnest/divergence/"
+    elif productID == 680:
+        productDesc = "NAM NEST Simulated 1km AGL Reflectivity"
+        productPath = "gisproducts/namnest/simrefd/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
+    elif productID == 681:
+        productDesc = "NAM NEST Simulated 1km AGL Reflectivity"
+        productPath = "products/namnest/refdcomposite/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
@@ -526,6 +622,39 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
             totalFrameCount = 49
         else:
             totalFrameCount = 19
+    elif productID == 808:
+        productDesc = "HRRR Simulated Composite Reflectivity"
+        productPath = "gisproducts/hrrr/simrefc/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
+    elif productID == 809:
+        productDesc = "HRRR 1hr Max Updraft Helicity"
+        productPath = "gisproducts/hrrr/udhelicity/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
+    elif productID == 810:
+        productDesc = "HRRR Simulated Composite Reflectivity"
+        productPath = "products/hrrr/refccomposite/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
     elif productID == 816:
         productDesc = "HRRR 500 hPa Winds"
         productPath = "gisproducts/hrrr/500wind/"
@@ -559,9 +688,20 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
             totalFrameCount = 49
         else:
             totalFrameCount = 19
-    elif productID == 890:
-        productDesc = "HRRR Surface Wind Divergence"
-        productPath = "products/hrrr/divergence/"
+    elif productID == 880:
+        productDesc = "HRRR Simulated 1km AGL Reflectivity"
+        productPath = "gisproducts/hrrr/simrefd/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
+    elif productID == 881:
+        productDesc = "HRRR Simulated 1km AGL Reflectivity"
+        productPath = "products/hrrr/refdcomposite/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
