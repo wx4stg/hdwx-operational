@@ -37,18 +37,21 @@ if __name__ == "__main__":
                 except:
                     remove(path.join(productMetadataDir, runFileName))
                     continue
+                # The "associated data" is stored in hdwxRootPath+productPath+pathExtension
+                # First we need the productPath, which can be obtained from hdwxRootPath/metadata/<productID>.json (This is where that "metadataTopDir" comes in)
+                with open(path.join(metadataTopDir, productID+".json"), "r") as jsonRead:
+                    # Read the json file
+                    productData = json.load(jsonRead)
+                # For satellite data, we only want to keep half of the purge threshold
+                if "satellite" in productData["productPath"]:
+                    thresholdTime = now - hoursToPurgeAfter/2
+                else:
+                    thresholdTime = now - hoursToPurgeAfter
                 # If the time older than the purge threshold then we want to purge it and all associated data
-                if runTime < now - hoursToPurgeAfter:
-                    # The "associated data" is stored in hdwxRootPath+productPath+pathExtension
-                    # First we need the productPath, which can be obtained from hdwxRootPath/metadata/<productID>.json (This is where that "metadataTopDir" comes in)
-                    with open(path.join(metadataTopDir, productID+".json"), "r") as jsonRead:
-                        # Read the json file
-                        productData = json.load(jsonRead)
+                if runTime < thresholdTime:
                     # We want to keep ADRAD data for one year though
                     if "ADRAD" in productData["productDescription"]:
-                        if runTime < now - timedelta(days=365):
-                            pass
-                        else:
+                        if runTime > now - timedelta(days=365):
                             continue
                     # Now we retrieve the productPath from the freshly read in dict
                     productPath = productData["productPath"]
