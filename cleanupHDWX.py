@@ -47,7 +47,7 @@ if __name__ == "__main__":
                         productData = json.load(jsonRead)
                     # For satellite data, we only want to keep half of the purge threshold
                     if "satellite" in productData["productPath"]:
-                        thresholdTime = now - hoursToPurgeAfter/2
+                        thresholdTime = now - timedelta(seconds=hoursToPurgeAfter.total_seconds()/2)
                     else:
                         thresholdTime = now - hoursToPurgeAfter
                     # If the time older than the purge threshold then we want to purge it and all associated data
