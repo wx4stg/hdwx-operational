@@ -290,6 +290,30 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 60
         productTypeID = 1
         totalFrameCount = -1
+    elif productID == 190:
+        productDesc = "TASC Location"
+        productPath = "gisproducts/tasc/"
+        isFcst = False
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 1
+        totalFrameCount = -1
+    elif productID == 191:
+        productDesc = "TASC Location + MRMS Reflectivity"
+        productPath = "products/tasc/rala/"
+        isFcst = False
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 1
+        totalFrameCount = -1
+    elif productID == 192:
+        productDesc = "TASC Location + GeoColor"
+        productPath = "products/tasc/geocolor/"
+        isFcst = False
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 1
+        totalFrameCount = -1
     elif productID == 300:
         productDesc = "GFS Surface Temperature"
         productPath = "gisproducts/gfs/sfcT/"

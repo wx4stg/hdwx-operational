@@ -19,3 +19,6 @@
 [submodule "hdwx-satellite"]
 	path = hdwx-satellite
 	url = git@github.com:wx4stg/hdwx-satellite.git
+[submodule "hdwx-tasc"]
+	path = hdwx-tasc
+	url = git@github.com:wx4stg/hdwx-tasc.git
