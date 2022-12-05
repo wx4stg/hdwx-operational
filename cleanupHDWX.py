@@ -23,7 +23,7 @@ if __name__ == "__main__":
     metadataTopDir = path.join(hdwxRootPath, "metadata")
     # If this path exists, clean out any temporary files there
     if path.exists(metadataTopDir):
-        [remove(fileInTopDir) for fileInTopDir in listdir(metadataTopDir) if fileInTopDir.startswith("tmp") and "." not in fileInTopDir]
+        [remove(path.join(metadataTopDir, fileInTopDir)) for fileInTopDir in listdir(metadataTopDir) if fileInTopDir.startswith("tmp") and "." not in fileInTopDir]
         # Get path to hdwxRootPath/metadata/products/
         runsMetadataDir = path.join(metadataTopDir, "products")
         # if there's no data, at all, then we don't need to do any cleaning, so to be sure these paths exist first
