@@ -56,6 +56,14 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 30
         productTypeID = 0
         totalFrameCount = -1
+    elif productID == 4:
+        productDesc = "CONUS GeoColor"
+        productPath = "gisproducts/satellite/goes16/geocolor/"
+        isFcst = False
+        fileExt = "png"
+        dispFrames = 24
+        productTypeID = 0
+        totalFrameCount = -1
     elif productID == 5:
         productDesc = "GOES-16 CONUS GeoColor"
         productPath = "products/satellite/goes16/geocolor/"
