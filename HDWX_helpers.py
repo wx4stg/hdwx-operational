@@ -329,7 +329,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 301:
         productDesc = "GFS Surface Winds"
         productPath = "gisproducts/gfs/sfcWnd/"
@@ -337,7 +337,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 302:
         productDesc = "GFS Surface MSLP"
         productPath = "gisproducts/gfs/sfcMSLP/"
@@ -345,7 +345,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 303:
         productDesc = "GFS Surface Temperature, Winds, MSLP"
         productPath = "products/gfs/sfcTWndMSLP/"
@@ -353,7 +353,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 308:
         productDesc = "GFS Simulated Composite Reflectivity"
         productPath = "gisproducts/gfs/simrefc/"
@@ -361,7 +361,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 309:
         productDesc = "GFS 1hr Max Updraft Helicity"
         productPath = "gisproducts/gfs/udhelicity/"
@@ -369,7 +369,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 310:
         productDesc = "GFS Simulated Composite Reflectivity"
         productPath = "products/gfs/refccomposite/"
@@ -377,7 +377,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 316:
         productDesc = "GFS 500 hPa Winds"
         productPath = "gisproducts/gfs/500wind/"
@@ -385,7 +385,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 318:
         productDesc = "GFS 500 hPa Heights"
         productPath = "gisproducts/gfs/500hgt/"
@@ -393,7 +393,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 320:
         productDesc = "GFS 500 hPa Heights, Winds, Vorticity"
         productPath = "products/gfs/500staticvort/"
@@ -401,7 +401,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 321:
         productDesc = "GFS 250 hPa Winds"
         productPath = "gisproducts/gfs/250wind/"
@@ -409,7 +409,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 322:
         productDesc = "GFS 250 hPa Heights"
         productPath = "gisproducts/gfs/250hgt/"
@@ -417,7 +417,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 324:
         productDesc = "GFS 250 hPa Heights, Winds, Isotachs"
         productPath = "products/gfs/250staticjet/"
@@ -425,7 +425,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 325:
         productDesc = "GFS 850 hPa Winds"
         productPath = "gisproducts/gfs/850wind/"
@@ -433,7 +433,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 326:
         productDesc = "GFS 850 hPa Heights"
         productPath = "gisproducts/gfs/850hgt/"
@@ -441,7 +441,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 327:
         productDesc = "GFS 850 hPa Temperatures"
         productPath = "gisproducts/gfs/850temps/"
@@ -449,7 +449,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 328:
         productDesc = "GFS 850 hPa Heights, Winds, Temperatures"
         productPath = "products/gfs/850statictemps/"
@@ -457,7 +457,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 329:
         productDesc = "GFS 700 hPa Relative Humidity"
         productPath = "gisproducts/gfs/700rh/"
@@ -465,7 +465,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 331:
         productDesc = "GFS 700 hPa Relative Humidity, MSLP, 1000->500 hPa Thickness"
         productPath = "products/gfs/700staticrh/"
@@ -473,7 +473,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 332:
         productDesc = "GFS 4-Panel"
         productPath = "products/gfs/4pnl/"
@@ -481,7 +481,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 380:
         productDesc = "GFS Simulated 1km AGL Reflectivity"
         productPath = "gisproducts/gfs/simrefd/"
@@ -489,7 +489,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 381:
         productDesc = "GFS Simulated 1km AGL Reflectivity"
         productPath = "products/gfs/refdcomposite/"
@@ -497,7 +497,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         fileExt = "png"
         dispFrames = 0
         productTypeID = 3
-        totalFrameCount = 209
+        totalFrameCount = 129
     elif productID == 500:
         productDesc = "NAM Surface Temperature"
         productPath = "gisproducts/nam/sfcT/"
