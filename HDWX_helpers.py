@@ -3,7 +3,7 @@
 # Created 9 July 2022 by Sam Gardner <stgardner4@tamu.edu>
 
 from datetime import datetime as dt, timedelta
-from os import path, chmod, remove
+from os import path, chmod, remove, urandom
 from pathlib import Path
 import json
 from atomicwrites import atomic_write
@@ -1451,3 +1451,12 @@ def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=No
         ax.set_box_aspect(height/width)
     fig.set_facecolor("white")
     return fig
+
+def saveImage(fig, outputPath, transparent=False, bbox_inches=None):
+    randName = outputPath+urandom(4).hex()+".tmp"
+    fig.savefig(randName, format="png", transparent=transparent, bbox_inches=bbox_inches)
+    from PIL import Image
+    im = Image.open(randName)
+    im = im.convert("P", palette=Image.ADAPTIVE)
+    im.save(outputPath)
+    remove(randName)
