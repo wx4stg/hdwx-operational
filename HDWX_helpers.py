@@ -394,6 +394,14 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 3
         totalFrameCount = 209
+    elif productID == 320:
+        productDesc = "GFS 500 hPa Heights, Winds, Vorticity"
+        productPath = "products/gfs/500staticvort/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 209
     elif productID == 321:
         productDesc = "GFS 250 hPa Winds"
         productPath = "gisproducts/gfs/250wind/"
@@ -410,6 +418,14 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 3
         totalFrameCount = 209
+    elif productID == 324:
+        productDesc = "GFS 250 hPa Heights, Winds, Isotachs"
+        productPath = "products/gfs/250staticjet/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 209
     elif productID == 325:
         productDesc = "GFS 850 hPa Winds"
         productPath = "gisproducts/gfs/850wind/"
@@ -421,6 +437,46 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 326:
         productDesc = "GFS 850 hPa Heights"
         productPath = "gisproducts/gfs/850hgt/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 209
+    elif productID == 327:
+        productDesc = "GFS 850 hPa Temperatures"
+        productPath = "gisproducts/gfs/850temps/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 209
+    elif productID == 328:
+        productDesc = "GFS 850 hPa Heights, Winds, Temperatures"
+        productPath = "products/gfs/850statictemps/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 209
+    elif productID == 329:
+        productDesc = "GFS 700 hPa Relative Humidity"
+        productPath = "gisproducts/gfs/700rh/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 209
+    elif productID == 331:
+        productDesc = "GFS 700 hPa Relative Humidity, MSLP, 1000->500 hPa Thickness"
+        productPath = "products/gfs/700staticrh/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 209
+    elif productID == 332:
+        productDesc = "GFS 4-Panel"
+        productPath = "products/gfs/4pnl/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
@@ -514,6 +570,14 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 5
         totalFrameCount = 53
+    elif productID == 520:
+        productDesc = "NAM 500 hPa Heights, Winds, Vorticity"
+        productPath = "products/nam/500staticvort/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
     elif productID == 521:
         productDesc = "NAM 250 hPa Winds"
         productPath = "gisproducts/nam/250wind/"
@@ -530,6 +594,14 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 5
         totalFrameCount = 53
+    elif productID == 524:
+        productDesc = "NAM 250 hPa Heights, Winds, Isotachs"
+        productPath = "products/nam/250staticjet/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
     elif productID == 525:
         productDesc = "NAM 850 hPa Winds"
         productPath = "gisproducts/nam/850wind/"
@@ -541,6 +613,46 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 526:
         productDesc = "NAM 850 hPa Heights"
         productPath = "gisproducts/nam/850hgt/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
+    elif productID == 527:
+        productDesc = "NAM 850 hPa Temperatures"
+        productPath = "gisproducts/nam/850temps/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
+    elif productID == 528:
+        productDesc = "NAM 850 hPa Heights, Winds, Temperatures"
+        productPath = "products/nam/850statictemps/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
+    elif productID == 529:
+        productDesc = "NAM 700 hPa Relative Humidity"
+        productPath = "gisproducts/nam/700rh/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
+    elif productID == 531:
+        productDesc = "NAM 700 hPa Relative Humidity, MSLP, 1000->500 hPa Thickness"
+        productPath = "products/nam/700staticrh/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
+    elif productID == 532:
+        productDesc = "NAM 4-panel"
+        productPath = "products/nam/4pnl/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
@@ -634,6 +746,14 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 6
         totalFrameCount = 61
+    elif productID == 620:
+        productDesc = "NAM NEST 500 hPa Heights, Winds, Vorticity"
+        productPath = "products/namnest/500staticvort/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
     elif productID == 621:
         productDesc = "NAM NEST 250 hPa Winds"
         productPath = "gisproducts/namnest/250wind/"
@@ -650,6 +770,14 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 6
         totalFrameCount = 61
+    elif productID == 624:
+        productDesc = "NAM NEST 250 hPa Heights, Winds, Isotachs"
+        productPath = "products/namnest/250staticjet/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
     elif productID == 625:
         productDesc = "NAM NEST 850 hPa Winds"
         productPath = "gisproducts/namnest/850wind/"
@@ -661,6 +789,46 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 626:
         productDesc = "NAM NEST 850 hPa Heights"
         productPath = "gisproducts/namnest/850hgt/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
+    elif productID == 627:
+        productDesc = "NAM NEST 850 hPa Temperatures"
+        productPath = "gisproducts/namnest/850temps/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
+    elif productID == 628:
+        productDesc = "NAM NEST 850 hPa Heights, Winds, Temperatures"
+        productPath = "products/namnest/850statictemps/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
+    elif productID == 629:
+        productDesc = "NAM NEST 700 hPa Relative Humidity"
+        productPath = "gisproducts/namnest/700rh/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
+    elif productID == 631:
+        productDesc = "NAM NEST 700 hPa Relative Humidity, MSLP, 1000->500 hPa Thickness"
+        productPath = "products/namnest/700staticrh/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
+    elif productID == 632:
+        productDesc = "NAM NEST 4-panel"
+        productPath = "products/namnest/4pnl/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
@@ -781,6 +949,17 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
             totalFrameCount = 49
         else:
             totalFrameCount = 19
+    elif productID == 820:
+        productDesc = "HRRR 500 hPa Heights, Winds, Vorticity"
+        productPath = "products/hrrr/500staticvort/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
     elif productID == 821:
         productDesc = "HRRR 250 hPa Winds"
         productPath = "gisproducts/hrrr/250wind/"
@@ -792,9 +971,9 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
             totalFrameCount = 49
         else:
             totalFrameCount = 19
-    elif productID == 822:
-        productDesc = "HRRR 250 hPa Heights"
-        productPath = "gisproducts/hrrr/250hgt/"
+    elif productID == 824:
+        productDesc = "HRRR 250 hPa Winds, Isotachs"
+        productPath = "products/hrrr/250staticjet/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
@@ -817,6 +996,61 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 826:
         productDesc = "HRRR 850 hPa Heights"
         productPath = "gisproducts/hrrr/850hgt/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
+    elif productID == 827:
+        productDesc = "HRRR 850 hPa Temperatures"
+        productPath = "gisproducts/hrrr/850temps/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
+    elif productID == 828:
+        productDesc = "HRRR 850 hPa Heights, Winds, Temperatures"
+        productPath = "products/hrrr/850statictemps/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
+    elif productID == 829:
+        productDesc = "HRRR 700 hPa Relative Humidity"
+        productPath = "gisproducts/hrrr/700rh/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
+    elif productID == 831:
+        productDesc = "HRRR 700 hPa Relative Humidity, MSLP, 1000->500 hPa Thickness"
+        productPath = "products/hrrr/700staticrh/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
+    elif productID == 831:
+        productDesc = "HRRR 4-panel"
+        productPath = "products/hrrr/4pnl/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
@@ -913,6 +1147,17 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
             totalFrameCount = 61
         else:
             totalFrameCount = 31
+    elif productID == 1020:
+        productDesc = "ECMWF-HRES 500 hPa Heights, Winds, Vorticity"
+        productPath = "products/ecmwf-hres/500staticvort/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 10
+        if runTime.hour in [0, 12]:
+            totalFrameCount = 61
+        else:
+            totalFrameCount = 31
     elif productID == 1021:
         productDesc = "ECMWF-HRES 250 hPa Winds"
         productPath = "gisproducts/ecmwf-hres/250wind/"
@@ -927,6 +1172,17 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 1022:
         productDesc = "ECMWF-HRES 250 hPa Heights"
         productPath = "gisproducts/ecmwf-hres/250hgt/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 10
+        if runTime.hour in [0, 12]:
+            totalFrameCount = 61
+        else:
+            totalFrameCount = 31
+    elif productID == 1024:
+        productDesc = "ECMWF-HRES 250 hPa Heights, Winds, Isotachs"
+        productPath = "products/ecmwf-hres/250staticjet/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
@@ -957,7 +1213,61 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
             totalFrameCount = 61
         else:
             totalFrameCount = 31
-    
+    elif productID == 1027:
+        productDesc = "ECMWF-HRES 850 hPa Temperature"
+        productPath = "gisproducts/ecmwf-hres/850temps/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 10
+        if runTime.hour in [0, 12]:
+            totalFrameCount = 61
+        else:
+            totalFrameCount = 31
+    elif productID == 1028:
+        productDesc = "ECMWF-HRES 850 hPa Heights, Winds, Temperatures"
+        productPath = "products/ecmwf-hres/850statictemps/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 10
+        if runTime.hour in [0, 12]:
+            totalFrameCount = 61
+        else:
+            totalFrameCount = 31
+    elif productID == 1029:
+        productDesc = "ECMWF-HRES 700 hPa Relative Humidity"
+        productPath = "gisproducts/ecmwf-hres/700rh/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 10
+        if runTime.hour in [0, 12]:
+            totalFrameCount = 61
+        else:
+            totalFrameCount = 31
+    elif productID == 1031:
+        productDesc = "ECMWF-HRES 700 hPa Relative Humidity, MSLP, 1000->500 hPa Thickness"
+        productPath = "products/ecmwf-hres/700staticrh/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 10
+        if runTime.hour in [0, 12]:
+            totalFrameCount = 61
+        else:
+            totalFrameCount = 31
+    elif productID == 1032:
+        productDesc = "ECMWF-HRES 4-panel"
+        productPath = "products/ecmwf-hres/700staticrh/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 10
+        if runTime.hour in [0, 12]:
+            totalFrameCount = 61
+        else:
+            totalFrameCount = 31
     if isFcst:
         fHour = validTime - runTime
         fHour = int(fHour.total_seconds() / 3600)
@@ -1065,7 +1375,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         json.dump(productTypeDict, jsonWrite, indent=4)
     chmod(productTypeDictPath, 0o644)
 
-def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=None, cbticks=None, tickhighlight=None, cbextend="neither", colorbarLabel=None, width=1920, height=1080):
+def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=None, cbticks=None, tickhighlight=None, cbextend="neither", colorbarLabel=None, width=1920, height=1080, tax=None, lax=None):
     """
     Adds standardized HDWX branding to a figure 
     Parameters:
@@ -1083,7 +1393,9 @@ def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=No
     colorbarLabel: the label for the colorbar
     width: the width of the figure in pixels
     height: the height of the figure in pixels
-
+    tax: the title axes, will create if not provided
+    lax: the logo axes, will create if not provided
+    
     """
     from matplotlib import pyplot as plt
     from matplotlib import image as mpimg
@@ -1110,7 +1422,8 @@ def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=No
             cbax.tick_params(left=False, labelleft=False)
             cbax.tick_params(bottom=False, labelbottom=False)
             cbax.set_xlabel(colorbarLabel)
-    tax = fig.add_axes([0.5-(widthOfObjects/2), insetDistance, widthOfObjects, heightOfBottomBar])
+    if tax is None:
+        tax = fig.add_axes([0.5-(widthOfObjects/2), insetDistance, widthOfObjects, heightOfBottomBar])
     if fhour is None:
         titleStr = title+"\n Valid "+validTime.strftime("%a %-d %b %Y %H%MZ")
     else:
@@ -1124,7 +1437,8 @@ def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=No
     plt.setp(tax.spines.values(), visible=False)
     tax.tick_params(left=False, labelleft=False)
     tax.tick_params(bottom=False, labelbottom=False)
-    lax = fig.add_axes([0,0,(ax.get_position().width/3),heightOfBottomBar])
+    if lax is None:
+        lax = fig.add_axes([0,0,(ax.get_position().width/3),heightOfBottomBar])
     lax.set_aspect(2821/11071)
     lax.axis("off")
     lax.set_position([(1-(lax.get_position().width+insetDistance)), (lax.get_position().y0), (lax.get_position().width), (lax.get_position().height)])
@@ -1132,7 +1446,8 @@ def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=No
     atmoLogoPath = path.join(path.abspath(path.dirname(path.dirname(__file__))), "atmoLogo.png")
     atmoLogo = mpimg.imread(atmoLogoPath)
     lax.imshow(atmoLogo)
-    ax.set_position([insetDistance, .025+heightOfBottomBar, 1-2*insetDistance, 1-(insetDistance+heightOfBottomBar)])
-    ax.set_box_aspect(height/width)
+    if ax is not None:
+        ax.set_position([insetDistance, .025+heightOfBottomBar, 1-2*insetDistance, 1-(insetDistance+heightOfBottomBar)])
+        ax.set_box_aspect(height/width)
     fig.set_facecolor("white")
     return fig
