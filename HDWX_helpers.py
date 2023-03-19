@@ -99,7 +99,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         totalFrameCount = -1
     elif productID == 103:
         productDesc = "Mesonet Gardens Timeseries"
-        productPath = "products/mesonet/Farm/timeseries/"
+        productPath = "products/mesonet/Gardens/timeseries/"
         runPathExtension = "last24hrs"
         isFcst = False
         fileExt = "png"
