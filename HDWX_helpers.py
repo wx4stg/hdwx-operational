@@ -1048,7 +1048,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
             totalFrameCount = 49
         else:
             totalFrameCount = 19
-    elif productID == 831:
+    elif productID == 832:
         productDesc = "HRRR 4-panel"
         productPath = "products/hrrr/4pnl/"
         isFcst = True
