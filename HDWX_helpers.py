@@ -1259,7 +1259,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
             totalFrameCount = 31
     elif productID == 1032:
         productDesc = "ECMWF-HRES 4-panel"
-        productPath = "products/ecmwf-hres/700staticrh/"
+        productPath = "products/ecmwf-hres/4pnl/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
