@@ -52,7 +52,7 @@ do
         fi
     fi
     outDir=`realpath $myDir/$productDir/output/`/.
-    rsync -ulrH $outDir $targetDir --exclude=productTypes/
+    rsync -ulrH $outDir $targetDir --exclude=productTypes/ --exclude="*.tmp"
 done
 python3 productTypeJsonManager.py $targetDir
 python3 cleanupHDWX.py $purgePlotsAfter $targetDir

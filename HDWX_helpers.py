@@ -1453,10 +1453,9 @@ def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=No
     return fig
 
 def saveImage(fig, outputPath, transparent=False, bbox_inches=None):
-    randName = outputPath+urandom(4).hex()+".tmp"
-    fig.savefig(randName, format="png", transparent=transparent, bbox_inches=bbox_inches)
+    gifPath = outputPath.replace(path.basename(outputPath), "gif-"+path.basename(outputPath))
+    fig.savefig(gifPath, format="png", transparent=transparent, bbox_inches=bbox_inches)
     from PIL import Image
-    im = Image.open(randName)
-    im = im.convert("P", palette=Image.ADAPTIVE)
+    im = Image.open(gifPath)
+    im = im.convert("RGB").convert("P", palette=Image.WEB)
     im.save(outputPath)
-    remove(randName)
