@@ -1311,7 +1311,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     
 
     elif productID == 10020:
-        productDesc = "Europe GFS 500 hPa Heights, Winds, Vorticity"
+        productDesc = "Europe ECMWF-HRES 500 hPa Heights, Winds, Vorticity"
         productPath = "products/ecmwf-hres/500staticvorteurope/"
         isFcst = True
         fileExt = "png"
@@ -1319,7 +1319,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         productTypeID = 3
         totalFrameCount = 129
     elif productID == 10024:
-        productDesc = "Europe GFS 250 hPa Heights, Winds, Isotachs"
+        productDesc = "Europe ECMWF-HRES 250 hPa Heights, Winds, Isotachs"
         productPath = "products/ecmwf-hres/250staticjeteurope/"
         isFcst = True
         fileExt = "png"
@@ -1327,7 +1327,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         productTypeID = 3
         totalFrameCount = 129
     elif productID == 10028:
-        productDesc = "Europe GFS 850 hPa Heights, Winds, Temperatures"
+        productDesc = "Europe ECMWF-HRES 850 hPa Heights, Winds, Temperatures"
         productPath = "products/ecmwf-hres/850statictempseurope/"
         isFcst = True
         fileExt = "png"
@@ -1335,7 +1335,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         productTypeID = 3
         totalFrameCount = 129
     elif productID == 10031:
-        productDesc = "Europe GFS 700 hPa Relative Humidity, MSLP, 1000->500 hPa Thickness"
+        productDesc = "Europe ECMWF-HRES 700 hPa Relative Humidity, MSLP, 1000->500 hPa Thickness"
         productPath = "products/ecmwf-hres/700staticrheurope/"
         isFcst = True
         fileExt = "png"
@@ -1343,7 +1343,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         productTypeID = 3
         totalFrameCount = 129
     elif productID == 10032:
-        productDesc = "Europe GFS 4-Panel"
+        productDesc = "Europe ECMWF-HRES 4-Panel"
         productPath = "products/ecmwf-hres/4pnleurope/"
         isFcst = True
         fileExt = "png"
