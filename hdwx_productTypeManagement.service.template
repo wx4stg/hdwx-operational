@@ -1,0 +1,15 @@
+[Unit]
+Description=hdwx_productTypeManagement
+PartOf=hdwx.target
+
+[Service]
+ExecStart=$pathToPython productTypeJsonManager.py $targetDir
+ExecStop=$pathToPython clean-all.sh
+Restart=always
+RestartSec=60
+WorkingDirectory=$pathToClone
+User=$myUsername
+SyslogIdentifier=hdwx_productTypeManagement
+
+[Install]
+WantedBy=hdwx.target
