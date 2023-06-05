@@ -26,6 +26,9 @@ if __name__ == "__main__":
         exit()
     if len(sys.argv) >= 2:
         if sys.argv[1] == "--install":
+            if path.exists("/etc/systemd/system/hdwx.target"):
+                print("HDWX is already installed, please run with --uninstall to remove the existing installation first.")
+                exit()
             cloneDir = path.abspath(path.dirname(__file__))
             print("New HDWX Configuration:")
             while True:
@@ -74,7 +77,7 @@ if __name__ == "__main__":
                         shutil.chown(pathToConda, user=myUsername, group=myGroup)
                         shutil.chown(path.join(pathToConda, "micromamba"), user=myUsername, group=myGroup)
                         system(f"sudo -u {myUsername} {pathToConda}/micromamba shell init -s bash -p {pathToConda}")
-                        tmpInstallContent = f"#!/bin/bash\nexport MAMBA_ROOT_PREFIX=\"{pathToConda}\"\n{pathToConda}/micromamba env create --file {cloneDir}/hdwx-env.yml -y\n{pathToConda}/envs/HDWX/bin/pip3 install maidenhead ecmwf-opendata\n{pathToConda}/envs/HDWX/bin/pip3 install git+https://github.com/deeplycloudy/xlma-python"
+                        tmpInstallContent = f"#!/bin/bash\nexport MAMBA_ROOT_PREFIX=\"{pathToConda}\"\n{pathToConda}/micromamba env create --file {cloneDir}/hdwx-env.yml -y\n{pathToConda}/envs/HDWX/bin/pip3 install maidenhead ecmwf-opendata aprslib\n{pathToConda}/envs/HDWX/bin/pip3 install git+https://github.com/deeplycloudy/xlma-python"
                         with open("tmpInstall.sh", "w") as f:
                             f.write(tmpInstallContent)
                         shutil.chown("tmpInstall.sh", user=myUsername, group=myGroup)
@@ -82,7 +85,7 @@ if __name__ == "__main__":
                         remove("tmpInstall.sh")
                         break
                     elif "n" in autoInstall.lower():
-                        print("Ok, please install conda or mamba and import the 'hdwx-env.yml' file in the root of the this repository.\nYou will then need to install maidenhead, ecmwf-opendata, and xlma-python via pip.")
+                        print("Ok, please install conda or mamba and import the 'hdwx-env.yml' file in the root of the this repository.\nYou will then need to install maidenhead, ecmwf-opendata, aprslib, and xlma-python via pip.")
                         exit()
             pathToPython = path.join(pathToEnv, "bin", "python3")
             with open("hdwx.target", "r") as f:
@@ -97,7 +100,6 @@ if __name__ == "__main__":
             installServiceFile("hdwx_productTypeManagement.service", productTypeManagementFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
             print("Installing product modules...")
             for submoduleName in listdir(cloneDir):
-                print(submoduleName)
                 submodulePath = path.join(cloneDir, submoduleName)
                 if path.isdir(submodulePath) and submoduleName != "operational-metadata":
                     servicesPath = path.join(submodulePath, "services")
@@ -107,7 +109,7 @@ if __name__ == "__main__":
                             with open(serviceFilePath, "r") as f:
                                 serviceFileContents = f.read()
                             installServiceFile(serviceFile.replace(".service.template", ".service"), serviceFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
-            print("HDWX has been installed.")
+            print(">>> DONE! HDWX has been installed.")
         elif sys.argv[1] == "--uninstall":
             for serviceFile in listdir("/etc/systemd/system/"):
                 if serviceFile.startswith("hdwx"):

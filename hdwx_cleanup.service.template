@@ -4,9 +4,10 @@ PartOf=hdwx.target
 
 [Service]
 ExecStart=$pathToPython cleanupHDWX.py $timeToPurge $targetDir
-ExecStop=$pathToPython clean-all.sh
+ExecStop=/bin/bash clean-all.sh
 Restart=always
 RestartSec=7200
+RuntimeMaxSec=600
 WorkingDirectory=$pathToClone
 User=$myUsername
 SyslogIdentifier=hdwx_cleanup

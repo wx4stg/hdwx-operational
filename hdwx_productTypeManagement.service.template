@@ -7,6 +7,7 @@ ExecStart=$pathToPython productTypeJsonManager.py $targetDir
 ExecStop=$pathToPython clean-all.sh
 Restart=always
 RestartSec=60
+RuntimeMaxSec=600
 WorkingDirectory=$pathToClone
 User=$myUsername
 SyslogIdentifier=hdwx_productTypeManagement
