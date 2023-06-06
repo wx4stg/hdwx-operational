@@ -46,12 +46,6 @@ if __name__ == "__main__":
             else:
                 timeToPurge = int(timeToPurge)
             print("HDWX will purge product files older than " + str(timeToPurge) + " hours.")
-            backwardsCompatibility = input("Would you like to enable backwards compatibility with the upstream JSImagePlayer y/n? [N]: ")
-            if "y" in backwardsCompatibility.lower():
-                backwardsCompatibility = True
-            else:
-                backwardsCompatibility = False
-            
             myUsername = Path(cloneDir).owner()
             myGroup = Path(cloneDir).group()
             while True:
