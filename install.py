@@ -93,12 +93,12 @@ if __name__ == "__main__":
             installServiceFile("hdwx_cleanup.service", cleanupFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
             installServiceFile("hdwx_productTypeManagement.service", productTypeManagementFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
             print("Installing product modules...")
-            for submoduleName in listdir(cloneDir):
+            for submoduleName in sorted(listdir(cloneDir)):
                 submodulePath = path.join(cloneDir, submoduleName)
                 if path.isdir(submodulePath) and submoduleName != "operational-metadata":
                     servicesPath = path.join(submodulePath, "services")
                     if path.exists(servicesPath) and path.isdir(servicesPath):
-                        for serviceFile in listdir(servicesPath):
+                        for serviceFile in sorted(listdir(servicesPath)):
                             serviceFilePath = path.join(servicesPath, serviceFile)
                             with open(serviceFilePath, "r") as f:
                                 serviceFileContents = f.read()

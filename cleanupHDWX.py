@@ -66,7 +66,7 @@ if __name__ == "__main__":
                         if "gr2a" not in productPath:
                             # Now we know where the frames for this product are located, and we can purge them!
                             if path.exists(path.join(hdwxRootPath, productPath, runPathExtension)):
-                                rmtree(path.join(path.join(hdwxRootPath, productPath), runPathExtension))
+                                rmtree(path.join(hdwxRootPath, productPath, runPathExtension))
                             # Also remove the json data
                             if path.exists(runFilePath):
                                 remove(runFilePath)
