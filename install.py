@@ -31,21 +31,28 @@ if __name__ == "__main__":
                 exit()
             cloneDir = path.abspath(path.dirname(__file__))
             print("New HDWX Configuration:")
+            remoteInstall = False
             while True:
                 destDir = input("Where would you like product images and metadata to be rsynced to? [/wxgen3/products]: ")
                 if destDir == "":
                     destDir = "/wxgen3/products"
-                if path.exists(destDir):
-                    if path.isdir(destDir):
+                if "@" in destDir:
+                    remoteInstall = True
+                    break
+                else:
+                    Path(destDir).mkdir(parents=True, exist_ok=True)
+                    if path.exists(destDir) and path.isdir(destDir):
                         print("Products will be sent to " + destDir)
                         break
-                print("That path does not seem to be a valid directory, please try again...")
-            timeToPurge = input("How long (in hours) should products be retained before cleanup? [168]: ")
-            if timeToPurge == "":
-                timeToPurge = 168
-            else:
-                timeToPurge = int(timeToPurge)
-            print("HDWX will purge product files older than " + str(timeToPurge) + " hours.")
+                    else:
+                        print("Invalid path, please try again.")
+            if remoteInstall == False:
+                timeToPurge = input("How long (in hours) should products be retained before cleanup? [168]: ")
+                if timeToPurge == "":
+                    timeToPurge = 168
+                else:
+                    timeToPurge = int(timeToPurge)
+                print("HDWX will purge product files older than " + str(timeToPurge) + " hours.")
             myUsername = Path(cloneDir).owner()
             myGroup = Path(cloneDir).group()
             while True:
@@ -91,7 +98,8 @@ if __name__ == "__main__":
             print("Installing HDWX services...")
             installServiceFile("hdwx.target", targetFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
             installServiceFile("hdwx_cleanup.service", cleanupFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
-            installServiceFile("hdwx_productTypeManagement.service", productTypeManagementFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
+            if remoteInstall == False:
+                installServiceFile("hdwx_productTypeManagement.service", productTypeManagementFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
             print("Installing product modules...")
             for submoduleName in sorted(listdir(cloneDir)):
                 submodulePath = path.join(cloneDir, submoduleName)
