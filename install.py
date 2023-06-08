@@ -97,8 +97,8 @@ if __name__ == "__main__":
                 productTypeManagementFileContents = f.read()
             print("Installing HDWX services...")
             installServiceFile("hdwx.target", targetFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
-            installServiceFile("hdwx_cleanup.service", cleanupFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
             if remoteInstall == False:
+                installServiceFile("hdwx_cleanup.service", cleanupFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
                 installServiceFile("hdwx_productTypeManagement.service", productTypeManagementFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
             print("Installing product modules...")
             for submoduleName in sorted(listdir(cloneDir)):
