@@ -52,13 +52,16 @@ if __name__ == "__main__":
                     timeToPurge = 168
                 else:
                     timeToPurge = int(timeToPurge)
-                print("HDWX will purge product files older than " + str(timeToPurge) + " hours.")
+                if timeToPurge > 0:
+                    print("HDWX will purge product files older than " + str(timeToPurge) + " hours.")
+                else:
+                    print("HDWX will not purge product files.")
             myUsername = Path(cloneDir).owner()
             myGroup = Path(cloneDir).group()
             while True:
                 print("\n\n")
-                print("If you already have conda/mamba installed and configured with an 'HDWX' environment, please enter the path to your conda install.")
-                pathToConda = input("If an HDWX environment is not detected, you will be given the option to install micromamba in the loaction provided. [/opt/mamba]: ")
+                print("If you already have conda/mamba installed and configured with an 'HDWX' environment, please enter the path to your install.")
+                pathToConda = input("If an HDWX environment is not detected, you will be given the option to install micromamba in the location provided. [/opt/mamba]: ")
                 if pathToConda == "":
                     pathToConda = "/opt/mamba"
                     pathToEnv = path.join(pathToConda, "envs", "HDWX")
@@ -67,7 +70,7 @@ if __name__ == "__main__":
                     print("\n\n")
                     print("I can install micromamba x86_64 to "+pathToConda+" for you with an environment 'HDWX' for hdwx to run in if you'd like.")
                     print("If you have conda/mamba installed, but no HDWX environment, you should answer NO to the next question.")
-                    autoInstall = input("Proceed with installing micromamba? [Y/n]: ")
+                    autoInstall = input("Proceed with installing micromamba? [y/n]: ")
                     if "y" in autoInstall.lower():
                         print("Downloading micromamba...")
                         system("curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba")
