@@ -19,3 +19,6 @@
 [submodule "hdwx-tasc"]
 	path = hdwx-tasc
 	url = git@github.com:wx4stg/hdwx-tasc.git
+[submodule "hdwx-wpcsfc"]
+	path = hdwx-wpcsfc
+	url = https://github.com/wx4stg/hdwx-wpcsfc

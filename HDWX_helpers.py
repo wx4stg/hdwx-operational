@@ -1268,6 +1268,22 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
             totalFrameCount = 61
         else:
             totalFrameCount = 31
+    elif productID == 1200:
+        productDesc = "WPC Surface Bulletin"
+        productPath = "gisproducts/noaa/wpcsfcbull/"
+        isFcst = False
+        fileExt = "png"
+        dispFrames = 1
+        productTypeID = 12
+        totalFrameCount = 1
+    elif productID == 1201:
+        productDesc = "WPC Surface Bulletin"
+        productPath = "products/noaa/wpcsfcbull/"
+        isFcst = False
+        fileExt = "png"
+        dispFrames = 1
+        productTypeID = 12
+        totalFrameCount = 1
     if isFcst:
         fHour = validTime - runTime
         fHour = int(fHour.total_seconds() / 3600)
@@ -1356,6 +1372,8 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         productTypeDesc = "HRRR"
     elif productTypeID == 10:
         productTypeDesc = "ECMWF-HRES"
+    elif productTypeID == 12:
+        productTypeDesc = "NOAA"
     productTypeDictPath = path.join(basePath, "output", "metadata", "productTypes", str(productTypeID)+".json")
     Path(path.dirname(productTypeDictPath)).mkdir(parents=True, exist_ok=True)
     productsInType = list()
