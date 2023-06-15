@@ -13,7 +13,7 @@ if __name__ == "__main__":
     # Get desired time to purge files after from arg 1
     hoursToPurgeAfter = timedelta(hours=int(sys.argv[1]))
     # If hours to purge after is 0 or negative, exit immediately
-    if hoursToPurgeAfter <= 0:
+    if int(sys.argv[1]) <= 0:
         exit()
     # Get current time for comparison
     now = dt.utcnow()
