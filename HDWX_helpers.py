@@ -354,6 +354,22 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 3
         totalFrameCount = 129
+    elif productID == 304:
+        productDesc = "GFS Surface Dew Point"
+        productPath = "gisproducts/gfs/sfcTd/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 129
+    elif productID == 305:
+        productDesc = "GFS Surface Dew Point, Winds, MSLP"
+        productPath = "products/gfs/sfcTdWndMSLP/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 3
+        totalFrameCount = 129
     elif productID == 308:
         productDesc = "GFS Simulated Composite Reflectivity"
         productPath = "gisproducts/gfs/simrefc/"
@@ -530,6 +546,22 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 5
         totalFrameCount = 53
+    elif productID == 504:
+        productDesc = "NAM Surface Dew Point"
+        productPath = "gisproducts/nam/sfcTd/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
+    elif productID == 505:
+        productDesc = "NAM Surface Dew Point, Winds, MSLP"
+        productPath = "products/nam/sfcTdWndMSLP/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 5
+        totalFrameCount = 53
     elif productID == 508:
         productDesc = "NAM Simulated Composite Reflectivity"
         productPath = "gisproducts/nam/simrefc/"
@@ -701,6 +733,22 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 603:
         productDesc = "NAM NEST Surface Temperature, Winds, MSLP"
         productPath = "products/namnest/sfcTWndMSLP/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
+    elif productID == 604:
+        productDesc = "NAM NEST Surface Dew Point"
+        productPath = "gisproducts/namnest/sfcTd/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 6
+        totalFrameCount = 61
+    elif productID == 605:
+        productDesc = "NAM NEST Surface Dew Point, Winds, MSLP"
+        productPath = "products/namnest/sfcTdWndMSLP/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
@@ -886,6 +934,28 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 803:
         productDesc = "HRRR Surface Temperature, Winds, MSLP"
         productPath = "products/hrrr/sfcTWndMSLP/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
+    elif productID == 804:
+        productDesc = "HRRR Surface Dew Point"
+        productPath = "gisproducts/hrrr/sfcTd/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 8
+        if runTime.hour in [0, 6, 12, 18]:
+            totalFrameCount = 49
+        else:
+            totalFrameCount = 19
+    elif productID == 805:
+        productDesc = "HRRR Surface Dew Point, Winds, MSLP"
+        productPath = "products/hrrr/sfcTdWndMSLP/"
         isFcst = True
         fileExt = "png"
         dispFrames = 0
