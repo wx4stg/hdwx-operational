@@ -298,6 +298,14 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 60
         productTypeID = 1
         totalFrameCount = -1
+    elif productID == 157:
+        productDesc = "HLMA Flash Flood Analysis"
+        productPath = "products/hlma/ffanalysis/"
+        isFcst = False
+        fileExt = "png"
+        dispFrames = 60
+        productTypeID = 1
+        totalFrameCount = -1
     elif productID == 190:
         productDesc = "TASC Location"
         productPath = "gisproducts/tasc/"
