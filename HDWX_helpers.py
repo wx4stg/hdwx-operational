@@ -1410,6 +1410,14 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         dispFrames = 0
         productTypeID = 12
         totalFrameCount = 2
+    elif productID == 1215:
+        productDesc = "SPC Fire Weather Outlook"
+        productPath = "products/noaa/spc/fireout/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 12
+        totalFrameCount = 8
     if isFcst:
         fHour = validTime - runTime
         fHour = int(fHour.total_seconds() / 3600)
