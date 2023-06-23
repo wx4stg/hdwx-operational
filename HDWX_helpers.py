@@ -1347,7 +1347,7 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         else:
             totalFrameCount = 31
     elif productID == 1200:
-        productDesc = "WPC Surface Bulletin"
+        productDesc = "WPC Surface Analysis"
         productPath = "gisproducts/noaa/wpcsfcbull/"
         isFcst = False
         fileExt = "png"
@@ -1355,13 +1355,61 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
         productTypeID = 12
         totalFrameCount = 1
     elif productID == 1201:
-        productDesc = "WPC Surface Bulletin"
+        productDesc = "WPC Surface Analysis"
         productPath = "products/noaa/wpcsfcbull/"
         isFcst = False
         fileExt = "png"
         dispFrames = 1
         productTypeID = 12
         totalFrameCount = 1
+    elif productID == 1203:
+        productDesc = "SPC Categorical Convective Outlook"
+        productPath = "products/noaa/spc/catout/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 12
+        totalFrameCount = 3
+    elif productID == 1205:
+        productDesc = "SPC Long-Range Convective Outlook"
+        productPath = "products/noaa/spc/LRout/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 12
+        totalFrameCount = 8
+    elif productID == 1207:
+        productDesc = "SPC Probabilistic Convective Outlook D3-D8"
+        productPath = "products/noaa/spc/probout/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 12
+        totalFrameCount = 5
+    elif productID == 1209:
+        productDesc = "SPC Hail Outlook"
+        productPath = "products/noaa/spc/hailout/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 12
+        totalFrameCount = 2
+    elif productID == 1211:
+        productDesc = "SPC Wind Outlook"
+        productPath = "products/noaa/spc/windout/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 12
+        totalFrameCount = 2
+    elif productID == 1213:
+        productDesc = "SPC Tornado Outlook"
+        productPath = "products/noaa/spc/tornout/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 12
+        totalFrameCount = 2
     if isFcst:
         fHour = validTime - runTime
         fHour = int(fHour.total_seconds() / 3600)
