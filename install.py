@@ -8,12 +8,13 @@ from pathlib import Path
 import shutil
 import pwd
 
-def installServiceFile(fileName, fileContents, destDir, pathToPython, cloneDir ,timeToPurge, user):
+def installServiceFile(fileName, fileContents, destDir, pathToPython, cloneDir ,timeToPurge, user, shouldGIS):
     fileContents = fileContents.replace("$targetDir", destDir)
     fileContents = fileContents.replace("$pathToPython", pathToPython)
     fileContents = fileContents.replace("$pathToClone", cloneDir)
     fileContents = fileContents.replace("$timeToPurge", str(timeToPurge))
     fileContents = fileContents.replace("$myUsername", user)
+    fileContents = fileContents.replace("$shouldGIS", shouldGIS)
     with open(f"/etc/systemd/system/{fileName}", "w") as f:
         f.write(fileContents)
     system(f"systemctl enable {fileName}")
@@ -56,6 +57,14 @@ if __name__ == "__main__":
                     print("HDWX will purge product files older than " + str(timeToPurge) + " hours.")
                 else:
                     print("HDWX will not purge product files.")
+            while True:
+                shouldGIS = input("Would you like to generate GIS-aware images for custom clients? y/[n]: ")
+                if "y" in shouldGIS.lower():
+                    shouldGIS = ""
+                    break
+                else:
+                    shouldGIS = "--no-gis"
+                    break
             myUsername = Path(cloneDir).owner()
             myGroup = Path(cloneDir).group()
             while True:
@@ -99,10 +108,10 @@ if __name__ == "__main__":
             with open("hdwx_productTypeManagement.service.template", "r") as f:
                 productTypeManagementFileContents = f.read()
             print("Installing HDWX services...")
-            installServiceFile("hdwx.target", targetFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
+            installServiceFile("hdwx.target", targetFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername, shouldGIS)
             if remoteInstall == False:
-                installServiceFile("hdwx_cleanup.service", cleanupFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
-                installServiceFile("hdwx_productTypeManagement.service", productTypeManagementFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
+                installServiceFile("hdwx_cleanup.service", cleanupFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername, shouldGIS)
+                installServiceFile("hdwx_productTypeManagement.service", productTypeManagementFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername, shouldGIS)
             print("Installing product modules...")
             for submoduleName in sorted(listdir(cloneDir)):
                 submodulePath = path.join(cloneDir, submoduleName)
@@ -113,7 +122,7 @@ if __name__ == "__main__":
                             serviceFilePath = path.join(servicesPath, serviceFile)
                             with open(serviceFilePath, "r") as f:
                                 serviceFileContents = f.read()
-                            installServiceFile(serviceFile.replace(".service.template", ".service"), serviceFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername)
+                            installServiceFile(serviceFile.replace(".service.template", ".service"), serviceFileContents, destDir, pathToPython, cloneDir, timeToPurge, myUsername, shouldGIS)
             print(">>> DONE! HDWX has been installed.")
         elif sys.argv[1] == "--uninstall":
             for serviceFile in listdir("/etc/systemd/system/"):
