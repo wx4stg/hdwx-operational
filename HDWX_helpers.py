@@ -1581,10 +1581,8 @@ def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=No
     else:
         titleStr = title+"\n"+"f"+str(fhour)+" Valid "+validTime.strftime("%a %-d %b %Y %H%MZ")
     tax.text(0.5, 0.3, titleStr, horizontalalignment="center", verticalalignment="center", fontsize=16)
-    xlabel = "Python HDWX -- Send bugs to stgardner4@tamu.edu"
     if notice is not None:
-        xlabel = xlabel+"\n"+notice
-    tax.set_xlabel(xlabel)
+        tax.set_xlabel(notice)
     tax.set_facecolor("#00000000")
     plt.setp(tax.spines.values(), visible=False)
     tax.tick_params(left=False, labelleft=False)
