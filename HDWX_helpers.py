@@ -1583,7 +1583,7 @@ def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=No
     tax.text(0.5, 0.3, titleStr, horizontalalignment="center", verticalalignment="center", fontsize=16)
     if notice is None:
         if "ecmwf" in title.lower():
-            noticeStr = "Copyright © "+validTime.strftime("%Y")+" European Centre for Medium-Range Weather Forecasts (ECMWF)\nhttps://www.ecmwf.int/"
+            notice = "Copyright © "+validTime.strftime("%Y")+" European Centre for Medium-Range Weather Forecasts (ECMWF)\nhttps://www.ecmwf.int/"
     if notice is not None:
         tax.set_xlabel(notice)
     tax.set_facecolor("#00000000")
