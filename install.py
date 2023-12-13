@@ -100,6 +100,12 @@ if __name__ == "__main__":
                     elif "n" in autoInstall.lower():
                         print("Ok, please install conda or mamba and import the 'hdwx-env.yml' file in the root of the this repository.\nYou will then need to install maidenhead, ecmwf-opendata, aprslib, and xlma-python via pip.")
                         exit()
+                else:
+                    pathToEnv = path.join(pathToConda, "envs", "HDWX")
+                    if path.exists(pathToEnv):
+                        break
+                    else:
+                        print("Environment not found, please try again.")
             pathToPython = path.join(pathToEnv, "bin", "python3")
             with open("hdwx.target", "r") as f:
                 targetFileContents = f.read()
