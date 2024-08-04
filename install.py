@@ -90,7 +90,7 @@ if __name__ == "__main__":
                         shutil.chown(pathToConda, user=myUsername, group=myGroup)
                         shutil.chown(path.join(pathToConda, "micromamba"), user=myUsername, group=myGroup)
                         system(f"sudo -u {myUsername} {pathToConda}/micromamba shell init -s bash -p {pathToConda}")
-                        tmpInstallContent = f"#!/bin/bash\nexport MAMBA_ROOT_PREFIX=\"{pathToConda}\"\n{pathToConda}/micromamba env create --file {cloneDir}/hdwx-env.yml -y\n{pathToConda}/envs/HDWX/bin/pip3 install maidenhead ecmwf-opendata aprslib\n{pathToConda}/envs/HDWX/bin/pip3 install git+https://github.com/deeplycloudy/xlma-python"
+                        tmpInstallContent = f"#!/bin/bash\nexport MAMBA_ROOT_PREFIX=\"{pathToConda}\"\n{pathToConda}/micromamba env create --file {cloneDir}/hdwx-env.yml -y"
                         with open("tmpInstall.sh", "w") as f:
                             f.write(tmpInstallContent)
                         shutil.chown("tmpInstall.sh", user=myUsername, group=myGroup)

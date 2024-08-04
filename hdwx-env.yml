@@ -22,7 +22,8 @@ dependencies:
 - scipy==1.10.1
 - xradar==0.2.0
 - geopandas==0.13.2
-pip:
-- ecmwf-opendata
-- maidenhead
-- aprslib
+- pip:
+  - ecmwf-opendata
+  - maidenhead
+  - aprslib
+  - git+https://github.com/deeplycloudy/xlma-python.git
