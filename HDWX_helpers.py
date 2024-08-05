@@ -1203,6 +1203,28 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
             totalFrameCount = 61
         else:
             totalFrameCount = 31
+    elif productID == 1004:
+        productDesc = "ECMWF-HRES Surface Dew Point"
+        productPath = "gisproducts/ecmwf-hres/sfcTd/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 10
+        if runTime.hour in [0, 12]:
+            totalFrameCount = 61
+        else:
+            totalFrameCount = 31
+    elif productID == 1005:
+        productDesc = "ECMWF-HRES Surface Dew Point, Winds, MSLP"
+        productPath = "products/ecmwf-hres/sfcTdWndMSLP/"
+        isFcst = True
+        fileExt = "png"
+        dispFrames = 0
+        productTypeID = 10
+        if runTime.hour in [0, 12]:
+            totalFrameCount = 61
+        else:
+            totalFrameCount = 31
     elif productID == 1016:
         productDesc = "ECMWF-HRES 500 hPa Winds"
         productPath = "gisproducts/ecmwf-hres/500wind/"
@@ -1597,8 +1619,11 @@ def dressImage(fig, ax, title, validTime, fhour=None, notice=None, plotHandle=No
     lax.set_position([(1-(lax.get_position().width+insetDistance)), (lax.get_position().y0), (lax.get_position().width), (lax.get_position().height)])
     plt.setp(lax.spines.values(), visible=False)
     atmoLogoPath = path.join(path.abspath(path.dirname(path.dirname(__file__))), "atmoLogo.png")
-    atmoLogo = mpimg.imread(atmoLogoPath)
-    lax.imshow(atmoLogo)
+    if not path.exists(atmoLogoPath):
+        atmoLogoPath = path.join('assets', 'atmoLogo.png')
+    if path.exists(atmoLogoPath):
+        atmoLogo = mpimg.imread(atmoLogoPath)
+        lax.imshow(atmoLogo)
     if ax is not None:
         ax.set_position([insetDistance, .025+heightOfBottomBar, 1-2*insetDistance, 1-(insetDistance+heightOfBottomBar)])
         ax.set_box_aspect(height/width)
